@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>VELOCITY - New Arrivals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "on-secondary-container": "#f9f7ff",
+                        "on-tertiary-container": "#848484",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "surface-bright": "#fbf9f9",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "inverse-primary": "#c6c6c6",
+                        "background": "#fbf9f9",
+                        "secondary": "#0050cc",
+                        "secondary-container": "#0266ff",
+                        "surface-container": "#efeded",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed": "#dae1ff",
+                        "on-primary-container": "#848484",
+                        "tertiary-container": "#1b1b1b",
+                        "outline": "#7e7576",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fbf9f9",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1c",
+                        "surface-tint": "#5e5e5e",
+                        "surface-container-high": "#e9e8e7",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-fixed": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "primary-container": "#1b1b1b",
+                        "surface-variant": "#e3e2e2",
+                        "on-secondary-fixed": "#001849",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-dim": "#dbdad9",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "xl": "48px",
+                        "lg": "24px",
+                        "2xl": "80px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-2xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-surface-container-highest">
+<div class="flex items-center justify-between px-lg h-16 w-full">
+<button class="p-sm -ml-sm text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="font-display-lg text-[24px] font-black tracking-tighter text-primary truncate px-md">VELOCITY</h1>
+<button class="p-sm -mr-sm text-on-surface-variant hover:opacity-80 transition-opacity active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-[64px] pb-[80px]">
+<!-- Page Title & Sticky Filter/Sort -->
+<div class="sticky top-[64px] z-40 bg-background/95 backdrop-blur-md border-b border-surface-container-highest pb-sm">
+<div class="px-lg pt-lg pb-md">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">New Arrivals</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">124 items found</p>
+</div>
+<div class="flex items-center justify-between px-lg">
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container-lowest border border-outline-variant rounded-full text-on-surface hover:bg-surface-container-low transition-colors font-label-sm text-label-sm uppercase tracking-widest active:scale-95" onclick="document.getElementById('filter-sheet').classList.remove('translate-y-full')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+                    Filter
+                </button>
+<div class="flex items-center gap-sm overflow-x-auto hide-scrollbar">
+<button class="px-md py-sm bg-primary text-on-primary rounded-full font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap">Latest</button>
+<button class="px-md py-sm bg-surface-container-lowest border border-outline-variant text-on-surface rounded-full font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap">Price: Low-High</button>
+</div>
+</div>
+</div>
+<!-- Product Grid (Single Column for Mobile) -->
+<div class="px-lg py-lg flex flex-col gap-xl">
+<!-- Product Card 1 -->
+<article class="flex flex-col gap-md group">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden border-[0.5px] border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A studio shot of a sleek, black athletic running shoe floating in mid-air against a pure white background. The lighting is harsh and high-contrast, emphasizing the precise textures of the woven upper and the aerodynamic curves of the thick foam midsole. The aesthetic is extremely modern, minimalist, and high-performance, fitting perfectly into an Obsidian Kinetic e-commerce store." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChdsI17y1_cVpzE4Lf-POue65EbqaP_KtvmglOkYFjUS2SW5dngKvLyADusTja0phNbg3lrGbjp8KVUFwgfXHPG6eIIF3xBRxYmAoDVGvIKzi7XOvty89Pg4PX9S9wVlIBri-Lj93bs9MPIuzeWfMvhqmEfey---TA0AIUVM0G3BBTWbX3M3o7fS-k0LQTz9b7GDYseDZF0BdhD6qh2_YcYkjwgNAABre_0QsKxDGChgny0VQPnwmS"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest text-on-surface px-sm py-xs rounded font-label-sm text-[10px] uppercase tracking-widest">New</div>
+<button class="absolute bottom-sm right-sm w-12 h-12 bg-primary/90 backdrop-blur text-on-primary rounded-full flex items-center justify-center hover:bg-primary active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="flex justify-between items-start gap-md">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">AeroPulse Pro X</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-xs">Men's Running Shoe</p>
+</div>
+<p class="font-title-md text-title-md text-primary shrink-0">$180</p>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="flex flex-col gap-md group">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden border-[0.5px] border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up studio shot of a lightweight, white running jacket draped dynamically as if caught in a gust of wind. The background is a stark, absolute black, creating a highly contrasting 'Panda' aesthetic. The fabric features subtle reflective silver accents. Lighting is crisp and technical, highlighting the breathability and premium construction of the athletic apparel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs0xKn_5DMtJcLJ-OBh_Q7aRGdC2MGNUlmbNX3AcnawDNSvvNcr84mZ1TGJYNC2fPpOEfqFhFC0uk0FMdkDyKE74Eh9oPhPTaXGALTExhFtOjtqZqQyqwCjO_i2fCIqD_W68MafQFOP3pYsN8JwXtqIBuJ59u6t7L-g-CHxAfSNJq7Drqz47wSEFpukt9kR_OSvvQbIFHRueyI4ZWcK58evBULZ9F--7CCz349v8Sh_rhOQRvNm10n"/>
+<button class="absolute bottom-sm right-sm w-12 h-12 bg-primary/90 backdrop-blur text-on-primary rounded-full flex items-center justify-center hover:bg-primary active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="flex justify-between items-start gap-md">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Vortex Shell Jacket</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-xs">Women's Training Outerwear</p>
+</div>
+<p class="font-title-md text-title-md text-primary shrink-0">$145</p>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="flex flex-col gap-md group">
+<div class="relative w-full aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden border-[0.5px] border-outline-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of dark grey, technically advanced compression tights laid flat against a brilliant white background. The image is highly detailed, showing the strategic ventilation zones and seamless construction. The lighting is bright and even, maintaining a clean, spacious Neo-Minimalist look. The overall vibe is serious, performance-driven athletic gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYGV4Mu9s-gDPWmErPGZF5SZlBxeYDzbTyYFig6iFac7azpeaVNOmFPXxQlOd9t0HH4hTJe_6QLIHjsaa94AsBdh1E1m4Hclx50kSQSgKX1D729kn-c7uL8uVsZEuKHZIUlJReXS-6kMbhQ2Viefmikf9sTDsUxpUzmvAefZfHHR-VaxTYHj5mXoRqpOK2YiY184uPVRuEj7OB9twN1RDPOlI8aTFCEzqyYBsH5WhYV-rcCyCrlppd"/>
+<div class="absolute top-sm left-sm bg-surface-container-lowest text-on-surface px-sm py-xs rounded font-label-sm text-[10px] uppercase tracking-widest">Bestseller</div>
+<button class="absolute bottom-sm right-sm w-12 h-12 bg-primary/90 backdrop-blur text-on-primary rounded-full flex items-center justify-center hover:bg-primary active:scale-95 transition-all shadow-md">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="flex justify-between items-start gap-md">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Kinetix Compression Tight</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant mt-xs">Men's Base Layer</p>
+</div>
+<p class="font-title-md text-title-md text-primary shrink-0">$95</p>
+</div>
+</article>
+<div class="py-xl flex justify-center">
+<button class="px-xl py-md bg-surface-container-lowest border border-primary text-primary rounded font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-low transition-colors active:scale-95">Load More</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-surface-container-highest">
+<div class="flex flex-col items-center gap-md py-xl px-lg mb-20">
+<h2 class="font-display-lg text-[32px] text-primary tracking-tighter">VELOCITY</h2>
+<div class="flex gap-lg mt-sm">
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-secondary transition-colors uppercase tracking-widest" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-secondary transition-colors uppercase tracking-widest" href="#">Terms</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-secondary transition-colors uppercase tracking-widest" href="#">Support</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-tertiary-container mt-lg opacity-60">© 2024 VELOCITY ATHLETICS</p>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-background border-t border-surface-container-highest md:hidden">
+<div class="flex justify-around items-center h-20 px-sm pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary font-bold hover:text-primary active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="search" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-transform duration-150 w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-label-sm text-[10px] uppercase tracking-widest">Settings</span>
+</a>
+</div>
+</nav>
+<!-- Filter Bottom Sheet Overlay -->
+<div class="fixed inset-0 z-[100] flex flex-col justify-end pointer-events-none translate-y-full transition-transform duration-300 ease-in-out" id="filter-sheet">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-sm pointer-events-auto opacity-0 transition-opacity" onclick="document.getElementById('filter-sheet').classList.add('translate-y-full');"></div>
+<div class="bg-surface-container-lowest w-full rounded-t-2xl shadow-[0_-12px_40px_rgba(0,0,0,0.12)] pointer-events-auto flex flex-col h-[85vh] relative z-10">
+<div class="flex items-center justify-between p-lg border-b border-surface-container-highest">
+<h3 class="font-title-md text-title-md text-on-surface">Filters</h3>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors" onclick="document.getElementById('filter-sheet').classList.add('translate-y-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-grow overflow-y-auto p-lg flex flex-col gap-xl">
+<!-- Category -->
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Category</h4>
+<div class="flex flex-wrap gap-sm">
+<button class="px-md py-sm bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase tracking-widest">Shoes</button>
+<button class="px-md py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm uppercase tracking-widest border border-transparent hover:border-outline-variant">Apparel</button>
+<button class="px-md py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm uppercase tracking-widest border border-transparent hover:border-outline-variant">Accessories</button>
+</div>
+</div>
+<!-- Size -->
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Size (US)</h4>
+<div class="grid grid-cols-4 gap-sm">
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant">7</button>
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant">7.5</button>
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant">8</button>
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant">8.5</button>
+<button class="py-sm bg-primary text-on-primary rounded font-label-sm text-label-sm">9</button>
+<button class="py-sm bg-primary text-on-primary rounded font-label-sm text-label-sm">9.5</button>
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant opacity-50">10</button>
+<button class="py-sm bg-surface-container-low text-on-surface rounded font-label-sm text-label-sm border border-transparent hover:border-outline-variant">10.5</button>
+</div>
+</div>
+<!-- Price -->
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Price Range</h4>
+<div class="flex items-center gap-md">
+<div class="flex-1">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-sm py-sm text-body-md font-body-md focus:border-primary focus:ring-0 transition-colors" placeholder="Min" type="text"/>
+</div>
+<span class="text-on-surface-variant">-</span>
+<div class="flex-1">
+<input class="w-full bg-surface-container-low border border-outline-variant rounded px-sm py-sm text-body-md font-body-md focus:border-primary focus:ring-0 transition-colors" placeholder="Max" type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="p-lg border-t border-surface-container-highest flex gap-md bg-surface-container-lowest pb-safe">
+<button class="flex-1 py-md bg-surface-container-lowest border border-primary text-primary rounded font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-low transition-colors">Clear</button>
+<button class="flex-[2] py-md bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity" onclick="document.getElementById('filter-sheet').classList.add('translate-y-full')">Apply Filters</button>
+</div>
+</div>
+</div>
+<script>
+        // Simple script to handle backdrop click for bottom sheet opacity
+        const sheet = document.getElementById('filter-sheet');
+        const backdrop = sheet.querySelector('.absolute');
+        
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    if (sheet.classList.contains('translate-y-full')) {
+                        backdrop.classList.replace('opacity-100', 'opacity-0');
+                    } else {
+                        backdrop.classList.replace('opacity-0', 'opacity-100');
+                    }
+                }
+            });
+        });
+        
+        observer.observe(sheet, { attributes: true });
+    </script>
+</body></html>

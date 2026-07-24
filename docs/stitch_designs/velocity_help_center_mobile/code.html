@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Help Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#303031",
+                        "primary-container": "#1b1b1b",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "tertiary": "#000000",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#1b1b1b",
+                        "background": "#fbf9f9",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-variant": "#e3e2e2",
+                        "surface-dim": "#dbdad9",
+                        "secondary-fixed": "#dae1ff",
+                        "secondary-container": "#0266ff",
+                        "on-error": "#ffffff",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed": "#001849",
+                        "on-background": "#1b1c1c",
+                        "on-secondary-container": "#f9f7ff",
+                        "on-primary-container": "#848484",
+                        "error": "#ba1a1a",
+                        "outline": "#7e7576",
+                        "on-primary-fixed": "#1b1b1b",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#848484",
+                        "on-surface-variant": "#4c4546",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#fbf9f9",
+                        "secondary": "#0050cc",
+                        "surface-tint": "#5e5e5e",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000000",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fbf9f9",
+                        "surface-container-high": "#e9e8e7",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#b3c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "2xl": "80px",
+                        "md": "16px",
+                        "xl": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-2xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-btn[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased md:hidden selection:bg-secondary selection:text-on-secondary flex flex-col min-h-screen">
+<!-- TopNavBar (Shared Component) - Mobile Adjustments applied -->
+<header class="bg-surface w-full top-0 sticky z-50 flex justify-between items-center h-20 px-lg border-b border-outline-variant flat no shadows">
+<div class="flex items-center gap-sm">
+<a class="font-display-lg text-display-lg font-black tracking-tighter text-primary" href="#">VELOCITY</a>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="Search" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] text-on-surface" data-icon="search">search</span>
+</button>
+<button aria-label="Cart" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] text-on-surface" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button aria-label="Account" class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] text-on-surface" data-icon="person">person</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full px-5 py-xl flex flex-col gap-2xl">
+<!-- Hero & Search -->
+<section class="flex flex-col gap-lg w-full mt-lg">
+<div class="flex flex-col gap-xs">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">How can we help?</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Find answers, track orders, or contact us.</p>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full h-14 pl-[48px] pr-md rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md placeholder-on-surface-variant shadow-sm" placeholder="Search for articles, tracking, returns..." type="text"/>
+</div>
+</section>
+<!-- Quick Links (Bento-style Grid) -->
+<section class="w-full">
+<h2 class="font-title-md text-title-md text-on-surface mb-md">Quick Categories</h2>
+<div class="grid grid-cols-2 gap-sm">
+<!-- Card 1 -->
+<a class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm active:border-secondary active:bg-secondary-fixed-dim transition-all min-h-[120px]" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="local_shipping" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Tracking &amp; Delivery</span>
+</a>
+<!-- Card 2 -->
+<a class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm active:border-secondary active:bg-secondary-fixed-dim transition-all min-h-[120px]" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="keyboard_return" data-weight="fill" style="font-variation-settings: 'FILL' 1;">keyboard_return</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Returns &amp; Exchanges</span>
+</a>
+<!-- Card 3 -->
+<a class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm active:border-secondary active:bg-secondary-fixed-dim transition-all min-h-[120px]" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="inventory_2" data-weight="fill" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Product Information</span>
+</a>
+<!-- Card 4 -->
+<a class="flex flex-col items-center justify-center gap-sm p-md rounded-xl bg-surface-container-lowest border border-outline-variant shadow-sm active:border-secondary active:bg-secondary-fixed-dim transition-all min-h-[120px]" href="#">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="payments" data-weight="fill" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Payment &amp; Billing</span>
+</a>
+</div>
+</section>
+<!-- Top FAQs (Accordion) -->
+<section class="w-full">
+<h2 class="font-title-md text-title-md text-on-surface mb-md">Top Questions</h2>
+<div class="flex flex-col border-t border-outline-variant">
+<!-- FAQ Item 1 -->
+<div class="border-b border-outline-variant">
+<button aria-expanded="false" class="accordion-btn w-full flex items-center justify-between py-md min-h-[56px] text-left outline-none focus-visible:bg-surface-container-low transition-colors">
+<span class="font-body-md text-body-md font-semibold text-on-surface pr-md">What is your return policy?</span>
+<span class="material-symbols-outlined accordion-icon text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<div class="accordion-content">
+<div class="pb-md pr-md">
+<p class="font-body-md text-body-md text-on-surface-variant">We offer a 30-day return window for all unworn and unwashed items. Returns are free for registered members. Please visit our Returns portal to generate a label.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-outline-variant">
+<button aria-expanded="false" class="accordion-btn w-full flex items-center justify-between py-md min-h-[56px] text-left outline-none focus-visible:bg-surface-container-low transition-colors">
+<span class="font-body-md text-body-md font-semibold text-on-surface pr-md">How long does shipping take?</span>
+<span class="material-symbols-outlined accordion-icon text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<div class="accordion-content">
+<div class="pb-md pr-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Standard shipping typically takes 3-5 business days. Expedited shipping options are available at checkout. You will receive a tracking number once your order ships.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border-b border-outline-variant">
+<button aria-expanded="false" class="accordion-btn w-full flex items-center justify-between py-md min-h-[56px] text-left outline-none focus-visible:bg-surface-container-low transition-colors">
+<span class="font-body-md text-body-md font-semibold text-on-surface pr-md">Do your shoes run true to size?</span>
+<span class="material-symbols-outlined accordion-icon text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<div class="accordion-content">
+<div class="pb-md pr-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Most VELOCITY footwear runs true to size. For specific performance models, we recommend sizing up half a size. Please consult the sizing chart on the product page.</p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border-b border-outline-variant">
+<button aria-expanded="false" class="accordion-btn w-full flex items-center justify-between py-md min-h-[56px] text-left outline-none focus-visible:bg-surface-container-low transition-colors">
+<span class="font-body-md text-body-md font-semibold text-on-surface pr-md">Can I modify my order after placing it?</span>
+<span class="material-symbols-outlined accordion-icon text-on-surface-variant" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+</button>
+<div class="accordion-content">
+<div class="pb-md pr-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Orders are processed quickly to ensure fast delivery. You have a 30-minute window to cancel or modify your order via your account dashboard before it is sent to fulfillment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Support Options (Bottom Anchored visual) -->
+<section class="w-full mt-auto pt-xl">
+<div class="bg-surface-container-low rounded-xl p-lg flex flex-col items-center text-center gap-md border border-outline-variant shadow-sm">
+<div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-[32px] text-on-primary" data-icon="support_agent">support_agent</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Still need help?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Our elite support team is available 24/7 to assist you.</p>
+<button class="w-full h-14 bg-primary text-on-primary rounded-lg font-label-sm text-label-sm uppercase tracking-widest flex items-center justify-center gap-sm active:opacity-80 transition-opacity min-h-[48px]">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                    Start Live Chat
+                </button>
+<button class="w-full h-14 bg-surface-container-lowest text-primary border border-primary rounded-lg font-label-sm text-label-sm uppercase tracking-widest flex items-center justify-center gap-sm active:bg-surface-container transition-colors min-h-[48px]">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                    Email Support
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary pt-2xl pb-md flex flex-col items-center gap-md px-lg w-full mt-2xl">
+<div class="font-display-lg text-display-lg font-black text-on-primary">VELOCITY</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-label-sm text-label-sm text-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Accessibility</a>
+<a class="font-label-sm text-label-sm text-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="#">Cookie Settings</a>
+</div>
+<div class="font-label-sm text-label-sm text-surface-variant opacity-70 mt-lg">© 2024 VELOCITY ATHLETICS. ALL RIGHTS RESERVED.</div>
+</footer>
+<script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                const content = button.nextElementSibling;
+                
+                // Close all other accordions
+                document.querySelectorAll('.accordion-btn').forEach(otherBtn => {
+                    if (otherBtn !== button) {
+                        otherBtn.setAttribute('aria-expanded', 'false');
+                        otherBtn.nextElementSibling.classList.remove('open');
+                    }
+                });
+
+                // Toggle current accordion
+                button.setAttribute('aria-expanded', !isExpanded);
+                if (!isExpanded) {
+                    content.classList.add('open');
+                } else {
+                    content.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body></html>

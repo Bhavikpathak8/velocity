@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Profile Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efeded",
+                        "surface-variant": "#e3e2e2",
+                        "on-secondary-fixed": "#001849",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#848484",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#f9f7ff",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-surface": "#303031",
+                        "tertiary": "#000000",
+                        "surface-container-low": "#f5f3f3",
+                        "on-surface-variant": "#4c4546",
+                        "on-error": "#ffffff",
+                        "primary": "#000000",
+                        "inverse-primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-container-high": "#e9e8e7",
+                        "on-background": "#1b1c1c",
+                        "tertiary-container": "#1b1b1b",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-container": "#848484",
+                        "background": "#fbf9f9",
+                        "secondary-fixed": "#dae1ff",
+                        "surface": "#fbf9f9",
+                        "outline": "#7e7576",
+                        "surface-tint": "#5e5e5e",
+                        "surface-bright": "#fbf9f9",
+                        "secondary-container": "#0266ff",
+                        "surface-dim": "#dbdad9",
+                        "outline-variant": "#cfc4c5",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "secondary": "#0050cc",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-container": "#1b1b1b",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "on-tertiary-fixed-variant": "#474747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "xl": "48px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "base": "4px",
+                        "container-max": "1280px",
+                        "2xl": "80px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-2xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        /* Custom electric blue accent for specific interactions, adhering to design rules */
+        .btn-accent { background-color: #0266ff; color: #ffffff; }
+        .btn-accent:hover { background-color: #0050cc; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex w-full">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline flex-col h-full py-xl z-50">
+<div class="px-lg mb-xl">
+<h1 class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-surface">VELOCITY</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-sm">Elite Performance</p>
+</div>
+<div class="flex flex-col flex-grow">
+<!-- Active Tab: Profile -->
+<a class="flex items-center gap-md px-lg py-md text-primary dark:text-on-surface font-bold border-r-4 border-primary bg-surface-container-low hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-body-md text-body-md">Profile</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="font-body-md text-body-md">Orders</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-body-md text-body-md">Addresses</span>
+</a>
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</div>
+<div class="px-lg mt-auto">
+<div class="flex items-center gap-sm">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A minimalist black and white circular profile picture showing a sleek silhouette of an athlete in motion against a pure white background, emphasizing speed and focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnQWDWLTdCavn9GzugNbWG-wuHYaLyUjLuPUIfNf_LR2rrmt7Ts4ex6r2oJyJrgcTXet5VJ5rxO0CQmFdrfDQFiNjtvSEkmT6Z8xGgNjPG7Ajt7WXf7M7B8psTw_9A0sKymnIOnuBNnL4zZiz25OTT39ebc4EtjJTa2Gt5rhPBeeZhR86dp4sjbMS8EDF0kHSfT0XkKBtgREYtsmHidSai7DrMaIe_zjoyObPAxRSoRlfqcU2LVd05"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary">Jane Doe</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-70">jane@example.com</span>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 relative min-h-screen flex flex-col bg-surface">
+<!-- Mobile Header (Visible only on small screens) -->
+<header class="md:hidden flex justify-between items-center h-20 px-lg bg-surface/80 backdrop-blur-md border-b border-outline-variant sticky top-0 z-40">
+<h1 class="font-display-lg text-display-lg font-black tracking-tighter text-primary">VELOCITY</h1>
+<button class="text-primary p-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- TopAppBar (Web Desktop) -->
+<header class="hidden md:flex justify-between items-center h-20 px-xl bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md sticky top-0 z-40">
+<div class="flex-1"></div> <!-- Spacer since search is on right -->
+<div class="flex items-center gap-md">
+<!-- Search Bar -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-sm text-on-surface-variant">search</span>
+<input class="pl-[36px] pr-sm py-sm rounded-lg border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-primary font-body-md text-body-md transition-colors w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="text-primary dark:text-on-surface hover:text-primary transition-colors cursor-pointer active:opacity-70 p-sm rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-primary dark:text-on-surface hover:text-primary transition-colors cursor-pointer active:opacity-70 p-sm rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<!-- Page Content Canvas -->
+<div class="p-xl max-w-container-max mx-auto w-full pb-2xl">
+<div class="mb-2xl">
+<h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Overview</h2>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Profile Information Card (Spans 4 columns) -->
+<div class="lg:col-span-4 rounded-xl bg-surface-container-lowest border border-outline-variant p-lg shadow-sm flex flex-col items-center text-center">
+<div class="relative w-32 h-32 mb-lg">
+<img alt="Jane Doe Profile" class="w-full h-full rounded-full object-cover border-2 border-primary" data-alt="A striking, high-contrast black and white portrait of a modern athlete with a determined expression, set against a pristine white studio backdrop, evoking peak performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg9qvHlFo7yiX02n3HvlbfQ4NEkkivRN9Bu4WTnvEtEA3ODAnL8Jt7NEXUD00TmvP0PYLD8pUNrcrtcm_jTdqSlcKUlVlJbUSKumRrv5BYsLVUT8RntHnbJk5PFtzLBIa6QJI0DIb5_MPYkVdMNKtEP4Ae_GjRISEqiSZPEf7vhC_SliLZeI2zQ1S4t40dt0_nbH-m-F0_k17zouFlsdy4ZXKPnXufSFyszaAqZsEg_ukuoZP03EaU"/>
+<button class="absolute bottom-0 right-0 bg-primary text-on-primary rounded-full p-sm shadow-md hover:bg-surface-tint transition-colors">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-xs">Jane Doe</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Elite Member</p>
+<div class="w-full border-t border-surface-variant my-md"></div>
+<div class="w-full flex flex-col gap-sm text-left">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="font-body-md text-body-md text-primary truncate">jane@example.com</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">phone</span>
+<span class="font-body-md text-body-md text-primary">+1 (555) 019-2834</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-on-surface-variant">location_city</span>
+<span class="font-body-md text-body-md text-primary">New York, NY</span>
+</div>
+</div>
+<button class="mt-lg w-full bg-surface-container-lowest border border-primary text-primary font-label-sm text-label-sm py-sm rounded-lg hover:bg-surface-container-low transition-colors uppercase tracking-widest">
+                        Edit Profile
+                    </button>
+</div>
+<!-- Right Column Group (Spans 8 columns) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Performance Stats / Quick Actions -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-md">
+<div class="rounded-lg bg-primary text-on-primary p-md flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-transparent to-surface-tint opacity-0 group-hover:opacity-20 transition-opacity"></div>
+<span class="material-symbols-outlined">sprint</span>
+<div>
+<p class="font-label-sm text-label-sm opacity-80 uppercase tracking-wider">Velocity Score</p>
+<p class="font-title-md text-title-md font-bold mt-xs">942</p>
+</div>
+</div>
+<div class="rounded-lg border border-outline-variant bg-surface-container-lowest p-md flex flex-col justify-between h-32 hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant">loyalty</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Rewards</p>
+<p class="font-title-md text-title-md text-primary font-bold mt-xs">12,450 pts</p>
+</div>
+</div>
+<div class="rounded-lg border border-outline-variant bg-surface-container-lowest p-md flex flex-col justify-between h-32 hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant">credit_card</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Payment</p>
+<p class="font-title-md text-title-md text-primary font-bold mt-xs">Visa •••• 4242</p>
+</div>
+</div>
+<div class="rounded-lg border border-outline-variant bg-surface-container-lowest p-md flex flex-col justify-between h-32 hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant">shield</span>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Security</p>
+<p class="font-title-md text-title-md text-primary font-bold mt-xs">Strong</p>
+</div>
+</div>
+</div>
+<!-- Active Orders Section -->
+<div class="rounded-xl border border-outline-variant bg-surface-container-lowest p-lg shadow-sm flex flex-col flex-1">
+<div class="flex justify-between items-center mb-lg border-b border-surface-variant pb-md">
+<h3 class="font-title-md text-title-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined">local_shipping</span> Active Orders
+                            </h3>
+<a class="font-label-sm text-label-sm text-primary underline hover:text-on-surface-variant transition-colors" href="#">View All</a>
+</div>
+<!-- Order Item -->
+<div class="flex flex-col sm:flex-row gap-lg items-start sm:items-center p-md border border-surface-variant rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="w-full sm:w-24 h-24 bg-surface-container rounded-md overflow-hidden shrink-0 border border-surface-variant">
+<img alt="AeroSprint Pro X" class="w-full h-full object-cover mix-blend-multiply" data-alt="A sleek pair of high-performance running shoes in stark black and white, featuring aggressive aerodynamic lines, presented cleanly against a bright studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDraZB1ylu9S-5bQy--BdhHECFnnwI9W7pVyfeAX6n3X5VUgpzUa7uM4CsbzjUEa3SeBpuvSwZQHh-isO6pD7JxcsZ7-N2PQ3ckFMGUgNTL01mrrteGVvD14yDi859I5iHxEAlvZ6jDqPmq8aLbiqZj4D0G03v47PHRbA_MwJTtV6b7tw5kffk3zwMovcXeCBfKHMWn4ImIVQgGXFVDl6mbpWLv_zfKhM2E3_YcPRx63c86DxJcss7H"/>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<div class="flex justify-between items-start">
+<h4 class="font-title-md text-title-md text-primary">AeroSprint Pro X</h4>
+<span class="px-sm py-xs bg-surface-container text-primary font-label-sm text-label-sm rounded uppercase tracking-wider">In Transit</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Size: M 10.5 | Color: Obsidian/White</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-sm">Order #VEL-88934 • Placed Oct 12, 2023</p>
+</div>
+<div class="flex flex-col items-end justify-center w-full sm:w-auto mt-md sm:mt-0 gap-sm border-t sm:border-t-0 sm:border-l border-surface-variant pt-md sm:pt-0 sm:pl-md">
+<span class="font-title-md text-title-md text-primary font-bold">$240.00</span>
+<button class="btn-accent px-md py-sm rounded-lg font-label-sm text-label-sm uppercase tracking-widest w-full sm:w-auto text-center transition-colors shadow-sm">
+                                    Track Order
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

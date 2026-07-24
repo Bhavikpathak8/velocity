@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity Admin | Order Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#000000",
+                        "on-tertiary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "on-secondary-container": "#f9f7ff",
+                        "tertiary-container": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "surface-dim": "#dbdad9",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-background": "#1b1c1c",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "on-secondary-fixed": "#001849",
+                        "secondary": "#0050cc",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e3e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "primary-container": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "surface": "#fbf9f9",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-surface": "#303031",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#0266ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e7576",
+                        "background": "#fbf9f9",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-container": "#848484",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "secondary-fixed": "#dae1ff",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "48px",
+                        "gutter": "24px",
+                        "2xl": "80px",
+                        "xs": "4px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-2xl": ["Inter"],
+                        "display-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Hide scrollbar for clean mobile look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background h-screen flex flex-col font-body-md overflow-hidden">
+<!-- Top App Bar -->
+<header class="bg-surface text-primary border-b border-outline-variant flex justify-between items-center w-full px-lg h-20 sticky top-0 z-50 shrink-0">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-headline-lg-mobile font-black tracking-tighter text-primary">VELOCITY ADMIN</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors active:opacity-80">
+<span class="material-symbols-outlined text-primary" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto hide-scrollbar pb-24">
+<!-- Metrics Section (Swipeable row on mobile) -->
+<section class="px-5 mt-md mb-lg">
+<div class="flex gap-sm overflow-x-auto hide-scrollbar snap-x snap-mandatory pb-2">
+<div class="snap-start shrink-0 w-40 bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pending</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="pending_actions">pending_actions</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">42</span>
+</div>
+<div class="snap-start shrink-0 w-40 bg-primary text-on-primary rounded-xl p-md flex flex-col gap-sm shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-tertiary-container uppercase">Urgent</span>
+<span class="material-symbols-outlined text-error text-[20px]" data-icon="warning">warning</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary">12</span>
+</div>
+<div class="snap-start shrink-0 w-40 bg-surface-container-lowest border border-outline-variant rounded-xl p-md flex flex-col gap-sm shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Shipped</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary">156</span>
+</div>
+</div>
+</section>
+<!-- Orders List -->
+<section class="px-5">
+<h2 class="font-title-md text-title-md text-primary mb-md">Recent Orders</h2>
+<div class="flex flex-col gap-md">
+<!-- Order Card 1 (Urgent) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md relative overflow-hidden flex flex-col gap-md shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex justify-between items-start pl-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ORD-99382</span>
+<span class="font-title-md text-title-md text-primary mt-1">Elena Rostova</span>
+</div>
+<div class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-1 rounded">Expedited</div>
+</div>
+<div class="flex justify-between items-end pl-sm">
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span> 3 items</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> Due in 2h</div>
+</div>
+<span class="font-title-md text-title-md text-primary">$450.00</span>
+</div>
+<div class="flex gap-sm mt-2 pl-sm">
+<button class="flex-1 bg-surface-container text-primary font-label-sm text-label-sm py-2 rounded-lg hover:bg-surface-variant transition-colors flex justify-center items-center gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility">visibility</span> View Details
+                        </button>
+<button class="flex-1 bg-primary text-on-primary font-label-sm text-label-sm py-2 rounded-lg hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_shipping">local_shipping</span> Dispatch
+                        </button>
+</div>
+</div>
+<!-- Order Card 2 (Standard) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md relative overflow-hidden flex flex-col gap-md shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ORD-99381</span>
+<span class="font-title-md text-title-md text-primary mt-1">Marcus Chen</span>
+</div>
+<div class="bg-[#F5F5F7] text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded">Processing</div>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span> 1 item</div>
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span> Today</div>
+</div>
+<span class="font-title-md text-title-md text-primary">$125.50</span>
+</div>
+<div class="flex gap-sm mt-2">
+<button class="w-full bg-surface-container text-primary font-label-sm text-label-sm py-2 rounded-lg hover:bg-surface-variant transition-colors flex justify-center items-center gap-2 border border-outline-variant">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Manage Order
+                        </button>
+</div>
+</div>
+<!-- Order Card 3 (Completed) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md relative overflow-hidden flex flex-col gap-md shadow-[0_4px_20px_rgba(0,0,0,0.05)] opacity-70">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">ORD-99380</span>
+<span class="font-title-md text-title-md text-primary mt-1 line-through decoration-outline-variant text-on-surface-variant">Sarah Jenkins</span>
+</div>
+<div class="bg-surface-container-high text-primary font-label-sm text-label-sm px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span> Delivered
+                        </div>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" data-icon="inventory_2">inventory_2</span> 5 items</div>
+</div>
+<span class="font-title-md text-title-md text-on-surface-variant">$890.00</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface border-t border-outline-variant pb-safe z-50">
+<div class="flex justify-around items-center h-16">
+<!-- Active Tab -->
+<button class="flex flex-col items-center justify-center w-full h-full text-primary">
+<div class="bg-primary text-on-primary rounded-full px-4 py-1 mb-1">
+<span class="material-symbols-outlined text-[24px]" data-icon="receipt_long" data-weight="fill">receipt_long</span>
+</div>
+<span class="font-label-sm text-label-sm">Orders</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-sm text-label-sm">Inventory</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Customers</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-label-sm">Analytics</span>
+</button>
+</div>
+</nav>
+</body></html>

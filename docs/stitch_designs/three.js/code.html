@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_20 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_20" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_20');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  # VELOCITY Payment Integration (Stripe Express.js)
+
+This document outlines the backend implementation for processing payments using Stripe, integrated with the existing VELOCITY order system.
+
+## 1. Setup
+```javascript
+// npm install stripe
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const pool = require('./db');
+```
+
+## 2. Create Payment Intent (`POST /api/checkout/create-intent`)
+Issues a client secret to the frontend to securely collect payment details.
+
+```javascript
+async function createPaymentIntent(req, res) {
+  const { order_id } = req.body;
+
+  try {
+    // 1. Fetch order total from DB
+    const orderResult = await pool.query('SELECT total_amount FROM orders WHERE id = $1', [order_id]);
+    const amount = Math.round(orderResult.rows[0].total_amount * 100); // Stripe uses cents
+
+    // 2. Create Intent
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency: 'usd',
+      metadata: { order_id },
+      automatic_payment_methods: { enabled: true },
+    });
+
+    res.json({ clientSecret: paymentIntent.client_secret });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+}
+```
+
+## 3. Stripe Webhook (`POST /api/webhooks/stripe`)
+Handles asynchronous payment success/failure to update order status.
+
+```javascript
+async function handleWebhook(req, res) {
+  const sig = req.headers['stripe-signature'];
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+  } catch (err) {
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'payment_intent.succeeded') {
+    const paymentIntent = event.data.object;
+    const orderId = paymentIntent.metadata.order_id;
+
+    // Update order status to 'processing'
+    await pool.query(
+      "UPDATE orders SET status = 'processing', updated_at = CURRENT_TIMESTAMP WHERE id = $1",
+      [orderId]
+    );
+  }
+
+  res.json({ received: true });
+}
+```
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_20 -->
+</body>
+</html>

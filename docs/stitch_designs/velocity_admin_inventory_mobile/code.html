@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity Admin - Inventory (Mobile)</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#474747",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-error-container": "#93000a",
+                      "secondary-container": "#0266ff",
+                      "inverse-on-surface": "#f2f0f0",
+                      "primary-fixed": "#e2e2e2",
+                      "primary-container": "#1b1b1b",
+                      "on-surface-variant": "#4c4546",
+                      "surface": "#fbf9f9",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "inverse-surface": "#303031",
+                      "error": "#ba1a1a",
+                      "surface-container": "#efeded",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-container-highest": "#e3e2e2",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "secondary-fixed": "#dae1ff",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#7e7576",
+                      "background": "#fbf9f9",
+                      "outline-variant": "#cfc4c5",
+                      "on-primary-container": "#848484",
+                      "surface-tint": "#5e5e5e",
+                      "on-secondary-container": "#f9f7ff",
+                      "tertiary-container": "#1b1b1b",
+                      "tertiary": "#000000",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#848484",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#e9e8e7",
+                      "on-surface": "#1b1c1c",
+                      "inverse-primary": "#c6c6c6",
+                      "on-secondary-fixed": "#001849",
+                      "secondary": "#0050cc",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "error-container": "#ffdad6",
+                      "surface-variant": "#e3e2e2",
+                      "surface-bright": "#fbf9f9",
+                      "surface-dim": "#dbdad9",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-background": "#1b1c1c",
+                      "surface-container-low": "#f5f3f3",
+                      "secondary-fixed-dim": "#b3c5ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "base": "4px",
+                      "xs": "4px",
+                      "2xl": "80px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-2xl": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-2xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Base styles to enforce design system rules */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Subtle elevation level 1 */
+        .elevation-1 {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        /* Hide scrollbar for cleaner look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md w-full h-screen overflow-hidden flex flex-col">
+<!-- Mobile Header Container -->
+<header class="bg-surface/90 backdrop-blur-md z-40 px-md py-lg shrink-0 border-b border-outline-variant">
+<div class="flex justify-between items-center mb-md">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Inventory</h1>
+<div class="flex gap-md">
+<!-- Trailing Actions mapped from TopNavBar JSON -->
+<button class="text-on-surface-variant hover:text-primary transition-colors focus:ring-2 focus:ring-secondary/20 rounded-full p-xs">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-[32px] h-[32px] rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A high-contrast, minimalist headshot of a professional athlete in black and white, serving as a premium user avatar, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-X85aIng8F2aD5EMoLZEY5ztpMDWQYOeQLWDBg8ICYK43SjKUg0jqVDU6IbaEQMdkddBwjJHFGXNA7HfqGQQ-jm7ZBVjtbb3Bzgl3snzycjzF2eVC6dR5NF_gAXhkcE7Az1WPe3vTtRj5phYFmIgf-_K8Vu4Si0gY0LcKcs0CHkfI5zqpgGKzYwCLfA9gf2jcK0Vp90G6LlO2NR36iltjdcaqMdvYBUax05IS_pHHYXv4dakpq3dC"/>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface border border-outline-variant rounded-lg py-sm pl-[44px] pr-md font-body-md text-body-md text-primary focus:border-primary focus:ring-0 transition-colors placeholder:text-on-surface-variant" placeholder="Search products, SKUs..." type="text"/>
+</div>
+</header>
+<!-- Main Scrollable Content (Canvas) -->
+<main class="flex-1 overflow-y-auto no-scrollbar pb-[120px] px-md pt-md bg-background">
+<!-- Filter/Action Row -->
+<div class="flex justify-between items-center mb-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">All Products (248)</span>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                Filter
+            </button>
+</div>
+<!-- Product Cards List -->
+<div class="flex flex-col gap-md">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl p-sm flex items-center gap-md border border-outline-variant">
+<!-- Thumbnail -->
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden shrink-0 bg-surface-container-low border border-outline-variant/50 relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="High fidelity, studio lighting product shot of a sleek, matte black athletic running shoe with white sole detailing, isolated on a stark white background. Neo-minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9dKkXeZ58TGngs2LcLFZM7pZEELqgZpmJuOiTr3yfl1SD32xRNsf-8X41ZMkrDic60R4ntlUa38m1YV8MHijk7FCcpQF08u1UnP_Q-FXO152Rtm2luToCoGwSjQarC_GOC6qXPsqokuEaGv71cfFS-ukdCaep33z6HqNcoHQNGLcBGvKoZ0G1s4WIpdDnzEfX17svfdnYGVfwhv8FTa2D6hs9RvIFQfDmAdMZbfdp38IJEZuLnrJ5"/>
+</div>
+<!-- Details -->
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md text-primary truncate mb-xs">AeroKnit Pro Runner</h3>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SKU: AK-PRO-01</span>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Stock Badge (Chip) -->
+<span class="inline-flex items-center px-xs py-base rounded text-label-sm font-label-sm bg-surface-container-high text-primary">
+                            In Stock (142)
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-primary">$185.00</span>
+</div>
+</div>
+<!-- Action Menu -->
+<button class="shrink-0 text-on-surface-variant p-xs hover:bg-surface-container-low rounded-full transition-colors self-start mt-xs">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl p-sm flex items-center gap-md border border-outline-variant">
+<!-- Thumbnail -->
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden shrink-0 bg-surface-container-low border border-outline-variant/50 relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="Minimalist, premium product photography of a stark white, high-performance athletic water bottle with subtle black logo engraving, resting on a white surface with extremely soft, diffused shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp2vOWui_RSCymfXp_38lhlM97tAi6GVAFVKc20yhgc826sSafh-W2bjlpvNX5tW-1yR6fKbShmihW-KYtrVVAgSHd2KowoaAVAiLoberUiY6sDnXirNHqdYpDfuya-fxg4OBTtldyjvJNtyNhEax3DkvtUiBTg0HeS10RFts505u9uwU5eHDVRzJPKGJqnTUrvV_MSUo1aisp0Vc5fDNoUt5IwUaOqquKXceiJxkOdLoRc2xRBMPo"/>
+</div>
+<!-- Details -->
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md text-primary truncate mb-xs">HydroFlask Elite</h3>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SKU: HF-EL-99</span>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Stock Badge (Low Stock Warning) -->
+<span class="inline-flex items-center px-xs py-base rounded text-label-sm font-label-sm bg-error-container text-on-error-container">
+                            Low Stock (12)
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-primary">$45.00</span>
+</div>
+</div>
+<!-- Action Menu -->
+<button class="shrink-0 text-on-surface-variant p-xs hover:bg-surface-container-low rounded-full transition-colors self-start mt-xs">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl p-sm flex items-center gap-md border border-outline-variant">
+<!-- Thumbnail -->
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden shrink-0 bg-surface-container-low border border-outline-variant/50 relative">
+<img class="w-full h-full object-cover absolute inset-0" data-alt="High contrast overhead shot of a meticulously folded, deep black moisture-wicking athletic t-shirt, crisp lines, resting on a pure white background. Editorial neo-minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnpGzdSCpqtGzl-RcbxIpIDeGWYkXD1s7c18bg5LE8bTeluDnfYcjHpY-WS16Txgv9Af-PPZVcesXT137cvzEH_Tuiu2awsiFdeMdrieiSAu50fxl6Ankj8ens8RfyLZWHEiOfZPi0N2PsdRG-3qPi6B7AKxte8XFHWcBmxT2ucL6H-kgCbNC-OlZ_d5jGbJoTho9pgKjd7Rr_SvIGCXcUIRTCPKpCw3BdKJCgU8VB9hPgwSMBZZ8c"/>
+</div>
+<!-- Details -->
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md text-primary truncate mb-xs">Velocity Tech Tee</h3>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SKU: VT-TEE-BLK</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="inline-flex items-center px-xs py-base rounded text-label-sm font-label-sm bg-surface-container-high text-primary">
+                            In Stock (350)
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-primary">$65.00</span>
+</div>
+</div>
+<!-- Action Menu -->
+<button class="shrink-0 text-on-surface-variant p-xs hover:bg-surface-container-low rounded-full transition-colors self-start mt-xs">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface rounded-xl p-sm flex items-center gap-md border border-outline-variant opacity-75">
+<!-- Thumbnail -->
+<div class="w-[72px] h-[72px] rounded-lg overflow-hidden shrink-0 bg-surface-container-low border border-outline-variant/50 relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline" data-icon="image">image</span>
+</div>
+<!-- Details -->
+<div class="flex-1 min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface-variant truncate mb-xs">Carbon Fiber Insoles</h3>
+<div class="flex items-center gap-sm mb-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SKU: CF-INS-04</span>
+</div>
+<div class="flex items-center gap-sm">
+<!-- Stock Badge (Out of Stock) -->
+<span class="inline-flex items-center px-xs py-base rounded text-label-sm font-label-sm bg-surface-variant text-on-surface-variant">
+                            Out of Stock
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$25.00</span>
+</div>
+</div>
+<!-- Action Menu -->
+<button class="shrink-0 text-on-surface-variant p-xs hover:bg-surface-container-low rounded-full transition-colors self-start mt-xs">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-[96px] right-md w-[56px] h-[56px] rounded-xl bg-primary text-on-primary flex items-center justify-center elevation-1 active:scale-95 transition-transform z-40">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<!-- Bottom Navigation Shell (Mobile Pivot from SideNavBar JSON) -->
+<nav class="bg-surface flex justify-around items-center h-[80px] px-sm pb-sm pt-xs border-t-0 shadow-[0_-4px_20px_rgba(0,0,0,0.02)] fixed bottom-0 w-full z-50 shrink-0">
+<!-- Inventory (Active Match) -->
+<a class="flex flex-col items-center justify-center w-full h-full text-primary font-bold border-r-4 border-secondary border-t-0 border-b-0 border-l-0 border-transparent relative" href="#">
+<div class="absolute inset-x-0 top-0 h-1 bg-secondary mx-auto w-8 rounded-b-sm"></div>
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-label-sm text-[10px] leading-tight">Inventory</span>
+</a>
+<!-- Orders (Inactive) -->
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_cart">shopping_cart</span>
+<span class="font-label-sm text-[10px] leading-tight font-normal">Orders</span>
+</a>
+<!-- Customers (Inactive) -->
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="group">group</span>
+<span class="font-label-sm text-[10px] leading-tight font-normal">Customers</span>
+</a>
+<!-- Analytics (Inactive) -->
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="font-label-sm text-[10px] leading-tight font-normal">Analytics</span>
+</a>
+</nav>
+</body></html>

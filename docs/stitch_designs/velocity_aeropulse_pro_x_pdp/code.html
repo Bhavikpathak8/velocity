@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AeroPulse Pro X - VELOCITY ATHLETICS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#303031",
+                      "on-surface": "#1b1c1c",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "on-surface-variant": "#4c4546",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-secondary-container": "#f9f7ff",
+                      "surface-container-low": "#f5f3f3",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#cfc4c5",
+                      "on-primary-fixed-variant": "#474747",
+                      "tertiary": "#000000",
+                      "surface-dim": "#dbdad9",
+                      "surface-container": "#efeded",
+                      "on-tertiary-container": "#848484",
+                      "inverse-primary": "#c6c6c6",
+                      "secondary-container": "#0266ff",
+                      "inverse-on-surface": "#f2f0f0",
+                      "tertiary-container": "#1b1b1b",
+                      "surface-variant": "#e3e2e2",
+                      "error": "#ba1a1a",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "primary-container": "#1b1b1b",
+                      "secondary-fixed": "#dae1ff",
+                      "on-error": "#ffffff",
+                      "background": "#fbf9f9",
+                      "primary": "#000000",
+                      "on-primary-container": "#848484",
+                      "outline": "#7e7576",
+                      "surface-tint": "#5e5e5e",
+                      "on-background": "#1b1c1c",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#0050cc",
+                      "primary-fixed": "#e2e2e2",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e3e2e2",
+                      "on-secondary-fixed": "#001849",
+                      "surface": "#fbf9f9",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-container-high": "#e9e8e7",
+                      "surface-bright": "#fbf9f9",
+                      "on-primary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "xl": "48px",
+                      "xs": "4px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "2xl": "80px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-2xl": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-2xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "76px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle elevation classes */
+        .elevation-1 {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .elevation-2 {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+        
+        /* Hide scrollbar for clean horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface w-full sticky top-0 z-50 border-b border-outline-variant dark:border-on-surface-variant transition-colors duration-300">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<a class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-primary" href="#">
+                VELOCITY
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center space-x-lg font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">New Arrivals</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Men</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Women</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Equipment</a>
+<a class="text-primary dark:text-on-primary font-bold border-b-2 border-primary dark:border-on-primary pb-1 opacity-80 transition-opacity" href="#">Innovation</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center space-x-md text-primary dark:text-inverse-primary">
+<button aria-label="Search" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button aria-label="Shopping Bag" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-secondary text-on-primary text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
+</button>
+<button aria-label="Profile" class="hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200 hidden md:block">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button aria-label="Menu" class="md:hidden hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="w-full">
+<!-- Breadcrumbs -->
+<div class="px-gutter max-w-container-max mx-auto py-md">
+<nav aria-label="Breadcrumb" class="flex text-sm font-label-sm text-on-surface-variant">
+<ol class="inline-flex items-center space-x-2">
+<li class="inline-flex items-center">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Innovation</a>
+</div>
+</li>
+<li>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-[16px] mx-1">chevron_right</span>
+<span class="text-primary font-bold">AeroPulse Pro X</span>
+</div>
+</li>
+</ol>
+</nav>
+</div>
+<!-- Product Hero Section (Bento/Asymmetric Layout) -->
+<section class="px-gutter max-w-container-max mx-auto mb-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg lg:gap-xl">
+<!-- Image Gallery (Left Column) -->
+<div class="lg:col-span-7 flex flex-col-reverse lg:flex-row gap-md">
+<!-- Thumbnails -->
+<div class="flex lg:flex-col gap-sm overflow-x-auto lg:overflow-visible no-scrollbar pb-2 lg:pb-0 lg:w-24 shrink-0">
+<button class="w-20 h-24 lg:w-24 lg:h-28 rounded-lg overflow-hidden border-2 border-primary relative">
+<img alt="Thumbnail 1" class="w-full h-full object-cover object-center absolute inset-0" data-alt="A macro shot of a sleek, black running shoe with electric blue accents, focusing on the textured breathable mesh upper. Bright, minimalist lighting, pure white background, showcasing premium high-performance athletic footwear in a neo-minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKJbJT4JnvJW2J769gTd5kXr7Vj-MhnPqzq6GnRRUvdlheiFPogM0K8uNdpbhHLxDnEUMo2oAa8shFeTekhBi5t4OaOCbA8-d_X1fJZjYo23gxOMWVCP76L-0Cm8R3sussiW4MrCaZ_8OeTUxdY82GIOoVfi_JxNClPqERAiFZI0wwPMiAaenGd1qNnq6b96S6cjkyHc2buOuT9MNxe1kCg6LL8sxiX95fZRNWoHA5PV5m3EdYpbig"/>
+</button>
+<button class="w-20 h-24 lg:w-24 lg:h-28 rounded-lg overflow-hidden border border-outline-variant hover:border-outline transition-colors relative">
+<img alt="Thumbnail 2" class="w-full h-full object-cover object-center absolute inset-0" data-alt="A close-up of a high-tech running shoe sole, revealing a carbon fiber plate embedded in thick, responsive white foam. Sharp, high-contrast lighting emphasizing the aerodynamic curves and aggressive tread pattern against a stark white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_d7qZprXwrgZh9waLrgk-WQ4opWLwfkGyc5tMwdocn0ugFg6WTaOzxufdtbwQr7fmFxC2mfrezUx2Cuh55IY5hj1rFBGalocP0dh9pTwp9nesYrqX1bVEb04KAYz724nAxoQxwSx093RmhjRBSLnZ2MZMXuNuY4-jRxgtfAJ06S5f841REG-Wx9EKFwOHhwMz7jckbAULOVkLIJcLB7YzcB1TOtLyyuzRa7bIW66doENhon2P2M0U"/>
+</button>
+<button class="w-20 h-24 lg:w-24 lg:h-28 rounded-lg overflow-hidden border border-outline-variant hover:border-outline transition-colors relative">
+<img alt="Thumbnail 3" class="w-full h-full object-cover object-center absolute inset-0" data-alt="Top-down view of an elite black and electric blue running shoe. The laces are precision-engineered, and the sleek silhouette highlights the speed-focused design. Illuminated with bright, clean studio lighting to enhance the stark contrast and premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAojIML1w6r7G7_P_q8YhLkyjD539as9KNbNDHqoycuNlznvOGDyOhu1WBrVHzF0oCUluLuLXcQv9nE0BxDdXFZyxTII0oblgjRZtJ6-fZlM-FL0m3aQYlm_8deuDo4RZEVcdVmeJBOIS5NC5ldBFP3hUMqzpShwVEVpnwZILArfho_VB4l2kFQ05e3lqCPM7JWLZcjQjmHrYW1xP2DuYkOib1o4kHewbCznkr9fLNsGoRvsn4FNZue"/>
+</button>
+<button class="w-20 h-24 lg:w-24 lg:h-28 rounded-lg overflow-hidden border border-outline-variant hover:border-outline transition-colors relative">
+<img alt="Thumbnail 4" class="w-full h-full object-cover object-center absolute inset-0" data-alt="A dynamic, angled shot of a black running shoe mid-stride on a polished reflective surface. The bright electric blue logo stands out sharply against the dark upper. The lighting is crisp and modern, reflecting a high-end kinetic energy vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNamLB0QQYy4u2vRVjfZPmkfwj1pjfWKQHd_7wvMH4rZ5wx4_zzagOBVkrLWK9_-TGHEKJTF7K0P-2JTyrmQmo1Ewzg5_iSZhR3ASN-MmZugiAN_MDilKW9YksrbQ1EIh2NQ3C0AfOIeSRRZj8mWrfA_bTK0PSgY3-Vzlvpxn5_0YA6iUXJlmyQ6x0ssCIitKLTIn8xH1SEyqQOlTUNW4roj8i54cDkPziBMzjgeiyJrsE0lF0pz9-"/>
+</button>
+</div>
+<!-- Main Image -->
+<div class="w-full aspect-[4/3] lg:aspect-[3/4] bg-surface-container-low rounded-xl overflow-hidden relative elevation-1 group">
+<img alt="AeroPulse Pro X Main Image" class="w-full h-full object-cover object-center absolute inset-0 transition-transform duration-700 group-hover:scale-105" data-alt="A high-fidelity studio shot of the AeroPulse Pro X running shoe. The shoe is predominantly obsidian black with striking electric blue detailing. It sits angled dynamically on a pure white, softly lit surface. The breathable mesh and thick responsive foam sole are highlighted in extreme clarity, embodying a premium, fast, neo-minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA3tbQQ6tTWOJ7Y8sHLxPVvFFvT4z3qC3QOFoxu6nU1KszFOyagwueCO1oCfdxFa4hwuPWyOhZVOqqWUp3t8vmYew5ro4htE1HTwpBg-opxn63pqXDH3nOFTvKoPvOsK1Dn90cpg2oMstaWvveFFLiJ5Djn2V2jbla_GLicmHvvblU_wYS6IefWhVosYoQydrSXEIq9_T0HUIsKASs9arv8DjxSXuRrI0YlF1r4b2BbxBKa7fHsuDD"/>
+<!-- Floating Badge -->
+<div class="absolute top-md left-md bg-surface text-on-surface font-label-sm px-sm py-xs rounded uppercase tracking-wider elevation-1">
+                            New Release
+                        </div>
+</div>
+</div>
+<!-- Product Details (Right Column) -->
+<div class="lg:col-span-5 flex flex-col lg:sticky lg:top-24 self-start">
+<div class="mb-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-xs">AeroPulse Pro X</h1>
+<p class="font-title-md text-title-md text-on-surface-variant">$180.00</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                        Engineered for record-breaking speed. The AeroPulse Pro X features a full-length carbon fiber propulsion plate encased in our most responsive hyper-foam yet, designed to propel you forward with kinetic precision.
+                    </p>
+<div class="w-full h-px bg-outline-variant mb-lg"></div>
+<!-- Color Selection -->
+<div class="mb-lg">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Color</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Obsidian / Electric Blue</span>
+</div>
+<div class="flex gap-sm">
+<button class="w-12 h-12 rounded-full border-2 border-primary p-1 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+<span class="w-full h-full rounded-full bg-primary relative overflow-hidden block">
+<span class="absolute inset-y-0 right-0 w-1/2 bg-secondary"></span>
+</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline-variant p-1 flex items-center justify-center focus:outline-none hover:border-outline transition-colors">
+<span class="w-full h-full rounded-full bg-surface-container-lowest relative overflow-hidden block border border-outline-variant">
+<span class="absolute inset-y-0 right-0 w-1/2 bg-surface-variant"></span>
+</span>
+</button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="mb-xl">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">Select Size (US)</span>
+<a class="font-label-sm text-label-sm text-on-surface-variant underline hover:text-primary transition-colors" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 sm:grid-cols-5 gap-sm">
+<!-- Sizes -->
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">7</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">7.5</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">8</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">8.5</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">9</button>
+<button class="h-12 border-2 border-primary rounded bg-surface-container-lowest font-body-md text-body-md font-bold">9.5</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">10</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">10.5</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors opacity-50 cursor-not-allowed line-through">11</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">11.5</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">12</button>
+<button class="h-12 border border-outline-variant rounded bg-surface-container-lowest font-body-md text-body-md hover:border-primary transition-colors">13</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm">
+<button class="w-full h-14 bg-secondary text-on-primary font-title-md text-title-md rounded-lg hover:bg-secondary-container hover:text-on-secondary transition-colors duration-300 flex items-center justify-center gap-2 elevation-1 hover:elevation-2 transform active:scale-[0.98]">
+                            Add to Cart
+                            <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="w-full h-14 bg-surface-container-lowest text-primary border border-primary font-title-md text-title-md rounded-lg hover:bg-surface-container-low transition-colors duration-300 flex items-center justify-center gap-2">
+                            Favorite
+                            <span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<!-- Micro-info -->
+<div class="mt-lg flex items-center gap-sm text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="local_shipping">local_shipping</span>
+<span>Free shipping on orders over $150. Free returns.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications & Sustainability (Bento Grid) -->
+<section class="bg-surface-container-low py-2xl">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Kinetic Precision</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Spec Card 1 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl elevation-1 border border-outline-variant border-opacity-50">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="speed">speed</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-sm">Carbon Propulsion</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A full-length, rigid carbon fiber plate acts as a lever to propel you forward with maximum efficiency with every strike.</p>
+</div>
+<!-- Spec Card 2 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl elevation-1 border border-outline-variant border-opacity-50">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="cloud">cloud</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-sm">Hyper-Responsive Foam</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Our lightest, highest energy-returning foam absorbs impact and immediately snaps back to its original shape.</p>
+</div>
+<!-- Spec Card 3 -->
+<div class="bg-surface-container-lowest p-lg rounded-xl elevation-1 border border-outline-variant border-opacity-50">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="air">air</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-sm">Engineered Mesh</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The ultra-breathable upper minimizes weight while providing targeted support in high-stress zones.</p>
+</div>
+<!-- Sustainability Wide Card -->
+<div class="md:col-span-3 bg-surface-container-lowest p-lg rounded-xl elevation-1 border border-outline-variant border-opacity-50 flex flex-col md:flex-row gap-lg items-center">
+<div class="w-full md:w-1/3 aspect-video md:aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+<img alt="Sustainability Materials" class="w-full h-full object-cover absolute inset-0" data-alt="A close-up abstract shot of recycled yarn being woven into a strong, durable running shoe upper fabric. The lighting is soft and bright, emphasizing the clean, sustainable, and high-tech manufacturing process against a minimalist white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXRpngxaZnbYp50l8vUKADgwiFhAE7wuPjycAsgtwJCgKn7XpRrwQvqGSwHoO3WqGVb5A1_z5H-RYkL6nubLoTZQzkzQ-DKsEE3hz6A5z8LujTshdwyhM85qkAb7qcc6nh6T_swee8rDq06xM26a4yI_RtcShRru9aTocXCLmSFeNiUl2AyqAruZe_rfvf6YC3FA2KO7uu6446a7VV1yzrsN2GeoTk7tQYYP8sdTi0X9-o7CsU_dOm"/>
+</div>
+<div class="w-full md:w-2/3">
+<div class="inline-flex items-center gap-xs px-sm py-xs bg-surface-variant text-on-surface-variant font-label-sm rounded mb-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="eco">eco</span>
+<span>Zero-Waste Initiative</span>
+</div>
+<h3 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-sm">Performance Without Compromise</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-md">
+                                The AeroPulse Pro X features an upper made from 60% recycled materials and a midsole constructed using a zero-waste injection molding process. High speed doesn't have to mean high impact.
+                            </p>
+<a class="font-title-md text-title-md text-primary underline hover:text-secondary transition-colors" href="#">Read our Sustainability Report</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Complete the Look (Cross-sells) -->
+<section class="py-2xl px-gutter max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Complete The Look</h2>
+<a class="font-label-sm text-label-sm text-primary uppercase tracking-wider hover:text-secondary transition-colors" href="#">Shop All Men's Apparel</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md md:gap-lg">
+<!-- Product 1 -->
+<a class="group block" href="#">
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden relative mb-sm elevation-1 group-hover:elevation-2 transition-shadow">
+<img alt="Velocity Split Shorts" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" data-alt="A male athletic model wearing black running shorts with a subtle electric blue trim. Shot against a pristine white background with sharp, clean lighting to highlight the fabric's lightweight texture. Neo-minimalist high-fashion athletic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7G0RdPj5s39P8Bd9-NsOqUjypiJAMyYd6xgoNMc4K1bnpW4bMy0WyJNKqkVrAvJlOrNfNvXYL6R7k2qkebAn228pVC2YXYzqI0GEI6oOs7yI_1MJPzwXQfdmWJvToB9BI7ZgSaN8XjR_X1mJjNu_e9xsrZ-34OO7vWSoK3BCau93Wc_MBbN_YAkKZlh0q5c9vvWygZZNmXw-lwpyVyBh4MqnKPUlD0Bm2hOtBqWU9VGy1SRhOtdRa"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-secondary transition-colors">Velocity Split Shorts</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Men's Running Shorts</p>
+</div>
+<span class="font-title-md text-title-md text-on-surface">$55</span>
+</div>
+</a>
+<!-- Product 2 -->
+<a class="group block" href="#">
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden relative mb-sm elevation-1 group-hover:elevation-2 transition-shadow">
+<img alt="AeroKnit Singlet" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, lightweight black running singlet for men. Minimalist design with a small electric blue logo on the chest. Photographed flat on a pure white surface under bright, high-contrast studio lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVfqYg2rBgF61qnv-hwOxf2AjzvkEkCLSRD3AEFXRE2brdNTiauJ1TVoErLaqWb2Ck6jLr7Bh4JVsDJy1exvg_V-ehGVg2fdVNAONfWPqhFROL6KQFcqv34PmB5dvY3hItG7SF72jlFCm-NF5YLyu0r88P0k-zJP7jEzDfzxQ_D8QU3yQ_gbwDN8fNJyfRNoweAFs4kf1iZfixAT4DftiiHVgL0nQTNzFwRMV2x31ridBuv48mfl-h"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-secondary transition-colors">AeroKnit Singlet</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Men's Racing Top</p>
+</div>
+<span class="font-title-md text-title-md text-on-surface">$45</span>
+</div>
+</a>
+<!-- Product 3 -->
+<a class="group block hidden md:block" href="#">
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden relative mb-sm elevation-1 group-hover:elevation-2 transition-shadow">
+<img alt="Pro-Strike Socks" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" data-alt="A pair of thin, high-performance running socks in pure white with subtle black and blue accents. Photographed on a clean white background with crisp lighting emphasizing the breathable weave pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOxZ8sq6bv0Zsy15TXgps471luK0BUisO5C9m6Gu3b442fNrYrwtS8rQtt6-_M0W8dxFffTp0RnHjh7VVbmTna3gFl8nvmAPfA2vrBkFYrI3OB6MvGssz2qjmFpyw-WyCJvSXghSZkZeqi8pIZS2u3CpmqrncmGsrvCaFQJkhk4jJwEHBp26J_g7xFA5ecK9B8WCAniV4uFQ4enSPrxCCrfD3xov224s7gOgmv6Tmo9FY3YiB2bz5t"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-secondary transition-colors">Pro-Strike Socks</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Performance Wear</p>
+</div>
+<span class="font-title-md text-title-md text-on-surface">$18</span>
+</div>
+</a>
+<!-- Product 4 -->
+<a class="group block hidden md:block" href="#">
+<div class="aspect-[3/4] bg-surface-container-low rounded-lg overflow-hidden relative mb-sm elevation-1 group-hover:elevation-2 transition-shadow">
+<img alt="Shield Light Jacket" class="w-full h-full object-cover absolute inset-0 transition-transform duration-500 group-hover:scale-105" data-alt="A lightweight black windbreaker jacket for runners. The jacket looks sleek and aerodynamic, presented on a pure white background under bright, sharp lighting that highlights the water-resistant material sheen." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGxCFFhYLGfcBXcwFE58Pfajw_RTvmsZS4CBZjrQDQw6heDb9AKns5axOmFt2XtXIuLglsr2TDjOzG72QgdbHin9ZNryNw4Zg_E8goa_kBEmWtfDHmnItCO2_P9FwJz84hiR3j5I6i6pGlmA8LQ11VHQUl3z31N4Cb77klm2wG1IkR9EIWYRMkznjjS-uFdYBPfMGf3cMqACvbhm0WT2KHU9Dw7ZIzYq8EagPiVAhKCkHZqCIwZxqC"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-secondary transition-colors">Shield Light Jacket</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Men's Outerwear</p>
+</div>
+<span class="font-title-md text-title-md text-on-surface">$120</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-on-surface dark:bg-surface-container-lowest w-full pt-2xl pb-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg px-gutter max-w-container-max mx-auto">
+<div class="md:col-span-4 flex flex-col justify-between h-full">
+<a class="font-display-lg text-display-lg font-black text-on-primary dark:text-on-surface tracking-tighter mb-lg md:mb-0" href="#">
+                    VELOCITY
+                </a>
+<p class="font-label-sm text-label-sm text-surface-variant dark:text-on-surface-variant mt-auto">
+                    © 2024 VELOCITY ATHLETICS. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<div class="md:col-span-8 flex flex-wrap gap-lg md:justify-end">
+<div class="flex flex-col space-y-md">
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-200" href="#">Sustainability</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-200" href="#">Size Guide</a>
+</div>
+<div class="flex flex-col space-y-md ml-lg">
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-200" href="#">Returns</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-200" href="#">Store Locator</a>
+<a class="font-body-md text-body-md text-surface-variant dark:text-on-surface-variant hover:text-secondary-fixed dark:hover:text-secondary transition-colors duration-200" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

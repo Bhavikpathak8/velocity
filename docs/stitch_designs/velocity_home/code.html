@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - The Future of Motion</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f5f3f3",
+                      "on-surface-variant": "#4c4546",
+                      "on-error": "#ffffff",
+                      "tertiary": "#000000",
+                      "on-background": "#1b1c1c",
+                      "surface-container-high": "#e9e8e7",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface": "#1b1c1c",
+                      "on-primary-fixed": "#1b1b1b",
+                      "inverse-primary": "#c6c6c6",
+                      "primary": "#000000",
+                      "surface-variant": "#e3e2e2",
+                      "on-secondary-fixed": "#001849",
+                      "inverse-on-surface": "#f2f0f0",
+                      "error-container": "#ffdad6",
+                      "surface-container": "#efeded",
+                      "inverse-surface": "#303031",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#474747",
+                      "on-secondary-container": "#f9f7ff",
+                      "on-primary-container": "#848484",
+                      "surface-container-highest": "#e3e2e2",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "error": "#ba1a1a",
+                      "secondary": "#0050cc",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "primary-container": "#1b1b1b",
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-container": "#848484",
+                      "background": "#fbf9f9",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "outline-variant": "#cfc4c5",
+                      "on-tertiary": "#ffffff",
+                      "secondary-container": "#0266ff",
+                      "surface-tint": "#5e5e5e",
+                      "surface-bright": "#fbf9f9",
+                      "surface-dim": "#dbdad9",
+                      "secondary-fixed": "#dae1ff",
+                      "outline": "#7e7576",
+                      "surface": "#fbf9f9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "2xl": "80px",
+                      "base": "4px",
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "xl": "48px",
+                      "md": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "display-2xl": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "display-2xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Header: TopNavBar -->
+<header class="bg-surface/90 dark:bg-surface/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 dark:border-outline-variant/10 flat no shadows duration-200 ease-in-out">
+<div class="flex justify-between items-center h-20 px-xl max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-primary-fixed hover:opacity-70 transition-opacity cursor-pointer">
+                VELOCITY
+            </div>
+<nav class="hidden md:flex gap-xl">
+<a class="font-body-md text-body-md font-medium text-primary dark:text-on-primary-fixed border-b-2 border-primary dark:border-on-primary-fixed pb-1 duration-200 ease-in-out" href="#">New Drops</a>
+<a class="font-body-md text-body-md font-medium text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-primary-fixed transition-colors hover:opacity-70 duration-200 ease-in-out" href="#">Performance</a>
+<a class="font-body-md text-body-md font-medium text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-primary-fixed transition-colors hover:opacity-70 duration-200 ease-in-out" href="#">Lifestyle</a>
+<a class="font-body-md text-body-md font-medium text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-primary-fixed transition-colors hover:opacity-70 duration-200 ease-in-out" href="#">Collections</a>
+</nav>
+<div class="flex items-center gap-md text-primary dark:text-on-primary-fixed">
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out">shopping_cart</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out">favorite</span>
+<span class="material-symbols-outlined cursor-pointer hover:opacity-70 transition-opacity duration-200 ease-in-out">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[80px]">
+<!-- Hero Section -->
+<section class="relative w-full h-[90vh] bg-surface-container-lowest flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center opacity-90" data-alt="A hyper-realistic, dramatic studio shot of a futuristic athletic running shoe suspended in mid-air against an absolute white background. The shoe features sleek, aerodynamic lines in deep obsidian black with striking, highly saturated electric blue structural accents along the sole and mesh upper. High contrast, sharp focus, capturing the kinetic energy of motion in a neo-minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIn6Rha6Ly6i6uJvHUbAncYI5yMrysf5cjfauB6RGqnSz9349_Kqnp3gBIFx1vgmzkDyOnKW1RQwwq8JTP9GBBR7X2t5QTQQ29Ww5S0O4QgOm6BqDWA25Mgq7AFu_VVz4ZTk79z4nkzVJ9Y5AA4liosTYEyKIzP-QQAJrwzNhT2hSsQ3wDPBbKbANDUA-3bHbQ4awo4v6kmApJ78pFPVafkoRGsuWBOMJvhzqC-fJJ6AZv0qSzrdl"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-xl w-full flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/2 flex flex-col items-start gap-lg">
+<h1 class="font-display-2xl text-display-2xl text-primary drop-shadow-sm hidden md:block">
+                        The Future<br/>of Motion
+                    </h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary drop-shadow-sm block md:hidden">
+                        The Future<br/>of Motion
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                        Engineered for elite performance. Designed for ultimate precision. Experience the next generation of kinetic footwear.
+                    </p>
+<button class="bg-primary text-on-primary font-title-md text-title-md px-lg py-md rounded-DEFAULT hover:bg-tertiary-container transition-colors duration-300">
+                        Shop the Drop
+                    </button>
+</div>
+</div>
+</section>
+<!-- Featured Grid: New Arrivals -->
+<section class="max-w-container-max mx-auto px-xl py-2xl">
+<div class="flex justify-between items-end mb-xl border-b border-surface-variant pb-md">
+<h2 class="font-display-lg text-display-lg text-primary hidden md:block">New Arrivals</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary block md:hidden">New Arrivals</h2>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-xs" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] relative mb-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out border-[0.5px] border-surface-variant rounded-xl" data-alt="A premium close-up studio shot of a high-performance running sneaker angled slightly. The sneaker is predominantly white with sharp obsidian black technical overlays and subtle electric blue branding details. The background is a clean, minimal light gray, emphasizing the shoe's sleek silhouette and modern materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoJZin2QCbqfDgwTAM14xQTznxfBK6cNFK718jM7FfzwWtyDrzh6FuabwQNTuRtKjyNpzm_iqvUF7K_dZu8YhTNfXLTDEgEcH3CDTRreb2UE7X3FAlFqJ60GfX0hNQd_HPXDO-oFsMuMJUL6SSSyFIs6KuEII-fLsRx3r4_hrcWj1R9noj0jYEo680XXrOSqwsZEojR7s90sQhZCQNDxeiSlX3IkcOtg5tV6L_XW4uhfihxBIfRGVq"/>
+<div class="absolute top-md left-md bg-surface-container-highest px-sm py-xs rounded text-label-sm font-label-sm text-on-surface">New</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-primary">AeroMax Elite</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Men's Road Racing Shoe</p>
+</div>
+<span class="font-title-md text-title-md text-primary">$285</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] relative mb-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out border-[0.5px] border-surface-variant rounded-xl" data-alt="A sleek, profile view of a futuristic training shoe in all black with a thick, textured white sole. The studio lighting highlights the varied textures of the breathable mesh upper and matte synthetic leather accents. The pure white background creates a striking high-contrast neo-minimalist presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHwQ-p_UGVBCDwtUpZRq84KrPyilZmiuun7XgitH6PjM3ACtkP-4jlCMC63aO__TOb2ObLuAgM9dQPKL-RvtdF_zDj5p4ncCT3EpLFLvoGbvUL1Q9DNEhVMjMdI3xhYbF72guS_DRtKY-_Ez0AN9Ui8o1DYMC4G7JVyt_Dl4qBT6mpUnn_jI9pWxQRbaTnh6eBZu5XQyBVsghwGujBM0ZaLgSv0kfKQYeo1Wlvd2OIvoeCCk5UU7xT"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-primary">Strata Void</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Unisex Training Shoe</p>
+</div>
+<span class="font-title-md text-title-md text-primary">$190</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] relative mb-md">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out border-[0.5px] border-surface-variant rounded-xl" data-alt="A dynamic 3/4 angle shot of an avant-garde lifestyle sneaker. The shoe features a monochromatic white-on-white design with aggressive geometric sculpting on the midsole and minimalist lacing. Presented against a pristine white studio background, showcasing structural precision and modern e-commerce aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU09BT-_Y1gvFw6IVMc4gDmz7tDRG1YcgBXaJsjeaFfV1dC27nRM9998m1Bum5oIRuyLIF87YHWLMqp3y9sekzDqilSaIlA1ffxFiaMGDRKmmQejMCvjLC3jgJHuqfO5DgjaWLVl7Jgq2N2aaDXszQweQODffg0V4eiSpMO87VZgeyCqMoQUH3FDs9uA7wfSNSi2gU1qNLWON9l61SEZdegUCd1yG1H6YxakhyrY0do7RGh6KXcQk3"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-title-md text-title-md text-primary">Nexus Pure</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Women's Lifestyle Shoe</p>
+</div>
+<span class="font-title-md text-title-md text-primary">$220</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Section: Sustainable Innovation -->
+<section class="w-full bg-tertiary text-on-tertiary relative overflow-hidden py-2xl my-xl">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="A wide, cinematic macro shot of interwoven recycled synthetic fibers in deep blacks and grays, resembling a high-tech mesh fabric. The lighting is dramatic and edge-lit, emphasizing the intricate textures and technical nature of the sustainable material used in athletic footwear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHWjvNafZtGR3TGtRMrZvSDtqwuVK9yLODa9GUSk_bvGUc6DEjI1SsQNwnt0mjoGaAeXJy1CxKOpzpmbSHltmjE8SPh7eRgZ7MRO--HazoXaT7qJviLvCB8lor0fh3lfXisKmrmw7Der4HHH08tvPGqnoTOwOgTUVAPZlDSTqfzagmwR6m8bEFF1YiD3lO2Snycyc6Hityvb-TylDMKla420zvpwBRcS1UnrD57fwxamTlVrNUHbDG"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-xl flex flex-col items-center text-center gap-lg">
+<h2 class="font-display-2xl text-display-2xl text-on-tertiary tracking-tighter hidden md:block">Sustainable<br/>Innovation</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-tertiary tracking-tighter block md:hidden">Sustainable<br/>Innovation</h2>
+<p class="font-body-lg text-body-lg text-on-tertiary-container max-w-2xl">
+                    Performance shouldn't cost the planet. Our new collection utilizes 80% recycled kinetic polymers without sacrificing structural integrity.
+                </p>
+<button class="mt-md bg-on-tertiary text-tertiary font-title-md text-title-md px-lg py-md rounded-DEFAULT hover:bg-surface-variant transition-colors duration-300">
+                    Explore the Tech
+                </button>
+</div>
+</section>
+<!-- Secondary Grid: Lifestyle Essentials -->
+<section class="max-w-container-max mx-auto px-xl py-2xl">
+<div class="flex justify-between items-end mb-xl border-b border-surface-variant pb-md">
+<h2 class="font-display-lg text-display-lg text-primary hidden md:block">Lifestyle Essentials</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary block md:hidden">Lifestyle Essentials</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md md:gap-gutter">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-square relative mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-[0.5px] border-surface-variant rounded-xl" data-alt="A clean, flat-lay studio photograph of a premium, minimalist black athletic t-shirt. The fabric appears highly technical and breathable. The shirt is presented perfectly flat against a stark white background, emphasizing crisp lines and a neo-minimalist brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6XOgAEH3sOBGq00jfmMUoBkpenjTIv-FskhUuWxRn8HPASLEnZdMDw7efkNUp7eJTl18bfqZNVvoIB7OQJC0QD1g0R3YJ0eDEFYlTGQ9Grt3kLkeb02AYtNCKLBunrEIUw127DrVsqwrwK5xv30SyLowp53kOAtxUZtDLKE27AbAdh53-iCMbJ3Dx-jru0ry1I4uourhpECvDMm71WzQD_LztUYqvy4454xI5Q5gcWIpEi7yZNORC"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary truncate">Core Tech Tee</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$65</p>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-square relative mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-[0.5px] border-surface-variant rounded-xl" data-alt="A high-end e-commerce shot of a sleek, structural athletic windbreaker jacket in stark white with subtle black zipper detailing. Photographed on an invisible mannequin against a pure white background, showcasing the jacket's modern silhouette and lightweight technical fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD69u0UnTO6UCMAcuuIfl1CNgDfhvJKsi0W5l6Nu7pXy4up9rlcOmO5XJ4N3Z_NurrVGe9NcgLkgSkIqt63m-QKp5mRZ0rJTLHzypQeOWN75FNOh2iLiGEHuikMqeixEMmJps7q3inuaG_7nzTy_pokMCiQ-5Fkoj7KX6_0Xe5khp5DeRe4t7p7Yrk6ctVuulOzFW2-P-ZWeFoW4d84EyB1-KC4aO0yGeaROA9YvcjD7tG6SLvF9Z6s"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary truncate">Aero Shell Jacket</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$145</p>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-square relative mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-[0.5px] border-surface-variant rounded-xl" data-alt="A minimalist studio photo of a pair of tailored athletic track pants in deep obsidian black. The pants feature a slim, articulated fit with an electric blue drawstring detail. Clean, pure white background to maintain high contrast and focus on the product's premium cut." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7y7dtBn6Jy_7QkPK-KMu7e4DRK_di1dXfirCkphE-w5zqgdtsUOxzu6jLvXUdQ6EBVVW-rdreIvC9gWzIvFghkqrRu2M3yNw5QebstZPlqhehtVOUWsNEnNC_Jktpr__SDQdrDOdHGfv6dTRBBWHBuerAdpzRrB1lsdhvhWYYpAyd9jZKXZ7N-HMesrClxwsrLKeqnICP2A4Vxf6E_PZvl9Pw3G-Q62tPWbdBtHYp34keReKSnnpF"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary truncate">Knit Track Pant</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$110</p>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container-low rounded-xl overflow-hidden aspect-square relative mb-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-[0.5px] border-surface-variant rounded-xl" data-alt="A sleek, structured athletic duffel bag in matte black technical fabric, angled slightly to show its spacious compartments and minimalist hardware. The bag sits on a reflective white surface against a pure white backdrop, emphasizing a premium, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA0NEnsW6nvGyFTlcxNQFM2QKg8Ry47rv_wZ6LQ4V-AxOrH8OGrxsN4ZDUvMczE-RnU9V2B8j0YM7VqOgixEMUeC1qg6gHcBDXEvKUi8CK8lJxnyi4FW28Jdfa7ju_pUvCfDaMOxf72uQgKGf4dpL1eWO2wCl6blIter5Yrn9XrO0Cz0_KVLzmFbKPYhIshObHp6h59K87nTvoTwut0eQ_cfKEalYeNJBYQcpOGeASudrFRoBlvvFa"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary truncate">Velocity Duffel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">$180</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-tertiary-container w-full flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-xl py-2xl max-w-container-max mx-auto">
+<div class="flex flex-col gap-md">
+<span class="font-display-lg text-display-lg font-black text-on-tertiary dark:text-on-tertiary-container tracking-tighter">VELOCITY</span>
+<p class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 mt-auto">
+                    © 2024 VELOCITY Industries. All rights reserved.
+                </p>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 hover:text-on-tertiary dark:hover:text-on-tertiary-container underline transition-all duration-300" href="#">Sustainability</a>
+<a class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 hover:text-on-tertiary dark:hover:text-on-tertiary-container underline transition-all duration-300" href="#">Store Locator</a>
+<a class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 hover:text-on-tertiary dark:hover:text-on-tertiary-container underline transition-all duration-300" href="#">Gift Cards</a>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 hover:text-on-tertiary dark:hover:text-on-tertiary-container underline transition-all duration-300" href="#">Terms of Sale</a>
+<a class="font-label-sm text-label-sm text-on-tertiary/60 dark:text-on-tertiary-container/60 hover:text-on-tertiary dark:hover:text-on-tertiary-container underline transition-all duration-300" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-sm md:items-end">
+<span class="font-label-sm text-label-sm text-on-tertiary dark:text-on-tertiary-container mb-sm">Stay Updated</span>
+<div class="flex w-full md:w-auto">
+<input class="bg-tertiary-container border border-surface-tint text-on-tertiary px-sm py-xs text-sm w-full focus:outline-none focus:border-on-tertiary rounded-l-DEFAULT" placeholder="Email Address" type="email"/>
+<button class="bg-on-tertiary text-tertiary px-sm py-xs font-label-sm text-label-sm rounded-r-DEFAULT hover:bg-surface-variant transition-colors">Join</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

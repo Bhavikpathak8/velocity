@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velocity - Join the Movement</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed": "#dae1ff",
+                        "surface-container-highest": "#e3e2e2",
+                        "primary-container": "#1b1b1b",
+                        "inverse-surface": "#303031",
+                        "surface-variant": "#e3e2e2",
+                        "surface-container": "#efeded",
+                        "tertiary-container": "#1b1b1b",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-tint": "#5e5e5e",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#cfc4c5",
+                        "error": "#ba1a1a",
+                        "outline": "#7e7576",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-secondary-container": "#f9f7ff",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f9",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-surface-variant": "#4c4546",
+                        "background": "#fbf9f9",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-dim": "#dbdad9",
+                        "on-primary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary": "#0050cc",
+                        "surface-container-high": "#e9e8e7",
+                        "on-secondary-fixed": "#001849",
+                        "primary-fixed": "#e2e2e2",
+                        "on-background": "#1b1c1c",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#848484",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "on-primary-container": "#848484",
+                        "inverse-on-surface": "#f2f0f0",
+                        "secondary-container": "#0266ff",
+                        "on-surface": "#1b1c1c",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "48px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "container-max": "1280px",
+                        "lg": "24px",
+                        "2xl": "80px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "md": "16px"
+                    },
+                    fontFamily: {
+                        "title-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Inter", "sans-serif"],
+                        "display-2xl": ["Inter", "sans-serif"],
+                        "label-sm": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "title-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-lg": ["48px", { lineHeight: "52px", letterSpacing: "-0.03em", fontWeight: "800" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "display-2xl": ["72px", { lineHeight: "76px", letterSpacing: "-0.04em", fontWeight: "800" }],
+                        "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", letterSpacing: "0", fontWeight: "400" }],
+                        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "0", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .input-field {
+                @apply w-full border border-outline-variant rounded-lg px-md py-sm bg-surface text-on-surface font-body-md transition-colors duration-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary;
+            }
+            .btn-primary {
+                @apply w-full bg-secondary-container text-on-secondary-container rounded-lg py-md font-title-md text-title-md hover:bg-secondary transition-colors duration-200 active:scale-[0.98] flex items-center justify-center gap-sm;
+            }
+            .shadow-level-1 {
+                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row antialiased">
+<!-- Left side - Image -->
+<div class="hidden md:block md:w-1/2 relative bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A striking digital installation art piece featuring glowing, generative geometric shapes suspended in a vast, minimalist gallery space. The room is illuminated by high-key, soft white lighting that creates a bright, modern light-mode aesthetic. The artwork relies on a sophisticated palette of deep blacks and pristine whites, punctuated by intense accents of vibrant electric blue. The mood is serene yet technologically advanced." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDGk6JgAjkEhTWOOlLd0WR9weN4nIef7gC8KRozVLUDSGV-n9AEvYvGuDnmMJ-r6iulrqSJhGHgthFhN1N-nu_9xoLP5ajqD0umEzXG9Gk2fLVBd2MigUudDtb0DvkPpg58ouEJInnFKBoPrzW5PlfS_f3ogGKUbNSx13IwPmaUYfNCXFjdh6Kwa7bw0BZZrqiOkRI-ZXrJQRtHdTgVZ9mqIURkbEcu7IbjEvBzjQ8yAwRnce1m1sM7')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-xl left-xl right-xl text-on-primary">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Engineered Performance.</h2>
+<p class="font-body-lg text-body-lg opacity-90 max-w-md">Join the elite community pushing the boundaries of athletic innovation.</p>
+</div>
+<a class="absolute top-xl left-xl font-display-lg text-display-lg text-on-primary tracking-tighter" href="#">VELOCITY</a>
+</div>
+<!-- Right side - Form -->
+<div class="w-full md:w-1/2 flex items-center justify-center p-lg md:p-xl lg:p-2xl min-h-screen relative">
+<!-- Mobile Logo -->
+<div class="md:hidden absolute top-lg left-lg">
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-black tracking-tighter text-primary" href="#">VELOCITY</a>
+</div>
+<div class="w-full max-w-[440px] mt-2xl md:mt-0">
+<!-- Header -->
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-primary mb-sm">Join the Movement</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Create an account to track orders and get early access to new drops.</p>
+</div>
+<!-- Form -->
+<form class="space-y-md" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-2 gap-md">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase" for="firstName">First Name</label>
+<input class="input-field" id="firstName" placeholder="Jane" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase" for="lastName">Last Name</label>
+<input class="input-field" id="lastName" placeholder="Doe" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase" for="email">Email Address</label>
+<input class="input-field" id="email" placeholder="jane@example.com" required="" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase" for="password">Password</label>
+<div class="relative">
+<input class="input-field pr-xl" id="password" onkeyup="checkPasswordStrength(this.value)" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-sm top-1/2 -translate-y-1/2 p-sm text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</div>
+<!-- Password Strength Indicator -->
+<div class="flex gap-xs mt-2" id="strength-bars">
+<div class="h-1 w-full bg-surface-variant rounded-full transition-colors duration-300" id="bar-1"></div>
+<div class="h-1 w-full bg-surface-variant rounded-full transition-colors duration-300" id="bar-2"></div>
+<div class="h-1 w-full bg-surface-variant rounded-full transition-colors duration-300" id="bar-3"></div>
+<div class="h-1 w-full bg-surface-variant rounded-full transition-colors duration-300" id="bar-4"></div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-right" id="strength-text">Password strength</p>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase" for="confirmPassword">Confirm Password</label>
+<input class="input-field" id="confirmPassword" placeholder="••••••••" required="" type="password"/>
+</div>
+<!-- Policy Agreement -->
+<div class="flex items-start gap-sm pt-sm pb-md">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 border-outline-variant rounded text-primary focus:ring-primary focus:ring-offset-background bg-surface" id="terms" required="" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant normal-case" for="terms">
+                        By signing up, I agree to Velocity's <a class="text-primary underline hover:text-secondary-container transition-colors" href="#">Terms of Service</a> and <a class="text-primary underline hover:text-secondary-container transition-colors" href="#">Privacy Policy</a>.
+                    </label>
+</div>
+<button class="btn-primary group" type="submit">
+                    Create Account
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Sign In Link -->
+<div class="mt-lg text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Already have an account? 
+                    <a class="text-primary font-semibold hover:text-secondary-container transition-colors underline-offset-4 hover:underline" href="#">Sign In</a>
+</p>
+</div>
+</div>
+</div>
+<script>
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength += 1;
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 1;
+            if (password.match(/\d/)) strength += 1;
+            if (password.match(/[^a-zA-Z\d]/)) strength += 1;
+
+            const bars = [
+                document.getElementById('bar-1'),
+                document.getElementById('bar-2'),
+                document.getElementById('bar-3'),
+                document.getElementById('bar-4')
+            ];
+            
+            const text = document.getElementById('strength-text');
+            const colors = ['bg-error', 'bg-error', 'bg-[#eab308]', 'bg-[#22c55e]']; // Custom colors for strength indication
+            const labels = ['Weak', 'Fair', 'Good', 'Strong'];
+
+            bars.forEach(bar => {
+                bar.className = 'h-1 w-full bg-surface-variant rounded-full transition-colors duration-300';
+            });
+
+            if (password.length === 0) {
+                text.textContent = 'Password strength';
+                text.className = 'font-label-sm text-label-sm text-on-surface-variant text-right';
+                return;
+            }
+
+            for (let i = 0; i < strength; i++) {
+                bars[i].className = `h-1 w-full rounded-full transition-colors duration-300 ${colors[strength - 1]}`;
+            }
+
+            text.textContent = labels[Math.max(0, strength - 1)];
+            
+            // Apply text color based on strength
+            if(strength <= 2) {
+                text.className = 'font-label-sm text-label-sm text-error text-right';
+            } else if (strength === 3) {
+                 text.className = 'font-label-sm text-label-sm text-[#eab308] text-right';
+            } else {
+                 text.className = 'font-label-sm text-label-sm text-[#22c55e] text-right';
+            }
+        }
+    </script>
+</body></html>

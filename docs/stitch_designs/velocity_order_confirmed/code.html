@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Order Confirmation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#cfc4c5",
+                        "background": "#fbf9f9",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fbf9f9",
+                        "on-surface": "#1b1c1c",
+                        "tertiary": "#000000",
+                        "surface": "#fbf9f9",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "inverse-surface": "#303031",
+                        "primary-container": "#1b1b1b",
+                        "primary": "#000000",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#001849",
+                        "surface-container-highest": "#e3e2e2",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "tertiary-container": "#1b1b1b",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f5f3f3",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-high": "#e9e8e7",
+                        "on-primary-container": "#848484",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-tint": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "secondary-container": "#0266ff",
+                        "on-secondary-container": "#f9f7ff",
+                        "outline": "#7e7576",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed": "#dae1ff",
+                        "surface-variant": "#e3e2e2",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary-container": "#848484",
+                        "surface-dim": "#dbdad9",
+                        "secondary": "#0050cc",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#474747",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "2xl": "80px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "display-2xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col items-center justify-center py-2xl px-lg md:px-xl">
+<main class="w-full max-w-2xl mx-auto flex flex-col items-center text-center">
+<!-- Brand/Icon Anchor -->
+<div class="mb-xl flex flex-col items-center animate-fade-in-up">
+<div class="w-24 h-24 rounded-full bg-secondary-container/10 flex items-center justify-center mb-lg relative overflow-hidden">
+<span class="material-symbols-outlined text-display-lg text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<!-- Subtle kinetic pulse effect -->
+<div class="absolute inset-0 border-2 border-secondary rounded-full animate-ping opacity-20"></div>
+</div>
+<h1 class="font-display-2xl text-display-2xl text-primary tracking-tighter mb-md">Confirmed.</h1>
+<p class="font-headline-lg text-headline-lg text-on-surface-variant">Your order is on the way.</p>
+</div>
+<!-- Meta Info -->
+<div class="w-full flex flex-col md:flex-row justify-center items-center gap-md mb-2xl opacity-90">
+<div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-full">
+<span class="material-symbols-outlined text-body-md text-on-surface-variant">receipt_long</span>
+<span class="font-label-sm text-label-sm text-on-surface">Order #VL-94285</span>
+</div>
+<div class="flex items-center gap-sm bg-surface-container-highest px-md py-sm rounded-full">
+<span class="material-symbols-outlined text-body-md text-on-surface-variant">mark_email_read</span>
+<span class="font-label-sm text-label-sm text-on-surface">jane@example.com</span>
+</div>
+</div>
+<!-- Bento Grid Structural Layout for Order Details -->
+<div class="w-full grid grid-cols-1 md:grid-cols-12 gap-md text-left mb-2xl">
+<!-- Items Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-lg border border-outline-variant shadow-sm flex flex-col gap-lg">
+<h2 class="font-title-md text-title-md text-primary border-b border-surface-container-high pb-sm">Order Summary</h2>
+<!-- Item 1 -->
+<div class="flex items-start gap-md group">
+<div class="w-20 h-20 bg-surface-container-high rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, modern high-performance running shoe, the AeroKnit Pro, featured in a stark, high-key studio lighting setup. The shoe is predominantly Chalk white with sharp Obsidian black accents, sitting on a pristine white minimalist pedestal. The image has a Neo-Minimalist, high-end e-commerce aesthetic, extremely sharp and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1jak7sC3t52J_KpU50tV_v_tOhXdf5US4U7vcO_d2kfVmKMv0zkoHoZJi6oBxDIpT7Lqn-WOS1Qyk-Z9u3QKko-ZRq1JQ9rCPocs0nhgn87hM1qZDrY04ybya2_6nFFAS3nPliZ2v49xJSan3g6roAJptTG8iKthUCLyLOJCbY8ZLphsUlQWKQ3PUMcvPT1v6Wz6LUcM17I21LIcESSO1w11BEsP8y6rEUqXcxFCsyy_dbJMgC-h"/>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md font-bold text-primary">AeroKnit Pro</h3>
+<span class="font-body-md text-body-md font-bold text-primary">$180.00</span>
+</div>
+<div class="mt-xs flex gap-sm">
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-sm py-[2px] rounded">Size: 10.5</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-sm py-[2px] rounded">Chalk/Obsidian</span>
+</div>
+</div>
+</div>
+<!-- Divider -->
+<div class="w-full h-px bg-surface-container-high"></div>
+<!-- Item 2 -->
+<div class="flex items-start gap-md group">
+<div class="w-20 h-20 bg-surface-container-high rounded-lg overflow-hidden flex-shrink-0 relative">
+<img class="object-cover w-full h-full mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-500" data-alt="A premium, technical outerwear piece, the Velocity Tech Shell jacket, displayed perfectly flat in a minimalist layout. The jacket is solid Obsidian black with subtle technical details and taped seams visible. Shot under bright, clean, high-contrast studio lighting typical of luxury athletic wear, against an absolute white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIk8UeCzyhaie7j8QiJy2FtsWNeeJ8CzdaqeIsGy7GCSQEj77iVRcEruLz2GxtibCAxASsK2xHWLkpN5rjfdhh-7CWAK0PrUZKM1709nrrcfFbpKc7bk7WESug6yNW8JQ8X_uWx10Ca-MlBvBty6SYyyv7kZDoRy1doi7F2FDbIhf70ei71PMMwk9T9jF-2VULorb-KmA7AigCGkXjIf-I_vpqAJ69-wgyq5f5vnw8JOgvSLjLwppI"/>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-body-md text-body-md font-bold text-primary">Velocity Tech Shell</h3>
+<span class="font-body-md text-body-md font-bold text-primary">$125.00</span>
+</div>
+<div class="mt-xs flex gap-sm">
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-sm py-[2px] rounded">Size: M</span>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-on-surface-variant px-sm py-[2px] rounded">Obsidian</span>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="mt-auto pt-lg border-t border-surface-container-high flex justify-between items-end">
+<span class="font-body-md text-body-md text-on-surface-variant">Total (incl. tax &amp; shipping)</span>
+<span class="font-title-md text-title-md text-primary">$329.40</span>
+</div>
+</div>
+<!-- Logistics Stack -->
+<div class="md:col-span-4 flex flex-col gap-md">
+<!-- Delivery Card -->
+<div class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant shadow-sm flex flex-col gap-sm">
+<div class="flex items-center gap-sm text-secondary mb-xs">
+<span class="material-symbols-outlined">local_shipping</span>
+<h2 class="font-title-md text-title-md">Delivery</h2>
+</div>
+<p class="font-body-md text-body-md text-primary font-bold">3-5 Business Days</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Estimated arrival</p>
+</div>
+<!-- Shipping Address Card -->
+<div class="bg-surface-container-lowest rounded-xl p-lg border border-outline-variant shadow-sm flex flex-col gap-sm flex-1">
+<div class="flex items-center gap-sm text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined">location_on</span>
+<h2 class="font-title-md text-title-md text-primary">Shipping To</h2>
+</div>
+<address class="font-body-md text-body-md text-on-surface-variant not-italic leading-relaxed">
+                        Jane Doe<br/>
+                        123 Velocity Way<br/>
+                        New York, NY 10001<br/>
+                        United States
+                    </address>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="w-full flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-container font-label-sm text-label-sm uppercase px-xl py-md rounded-lg transition-colors duration-200 tracking-wider flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">location_searching</span>
+                Track Order
+            </button>
+<button class="bg-surface-container-lowest border border-primary text-primary hover:bg-surface-container-highest font-label-sm text-label-sm uppercase px-xl py-md rounded-lg transition-colors duration-200 tracking-wider flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+                Continue Shopping
+            </button>
+</div>
+</main>
+<style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</body></html>

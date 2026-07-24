@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Register</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#dae1ff",
+                      "surface-container-highest": "#e3e2e2",
+                      "primary-container": "#1b1b1b",
+                      "inverse-surface": "#303031",
+                      "surface-variant": "#e3e2e2",
+                      "surface-container": "#efeded",
+                      "tertiary-container": "#1b1b1b",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-tint": "#5e5e5e",
+                      "error-container": "#ffdad6",
+                      "outline-variant": "#cfc4c5",
+                      "error": "#ba1a1a",
+                      "outline": "#7e7576",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-secondary-container": "#f9f7ff",
+                      "on-primary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface": "#fbf9f9",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-surface-variant": "#4c4546",
+                      "background": "#fbf9f9",
+                      "tertiary-fixed": "#e2e2e2",
+                      "surface-bright": "#fbf9f9",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-dim": "#dbdad9",
+                      "on-primary-fixed-variant": "#474747",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "inverse-primary": "#c6c6c6",
+                      "on-tertiary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "secondary": "#0050cc",
+                      "surface-container-high": "#e9e8e7",
+                      "on-secondary-fixed": "#001849",
+                      "primary-fixed": "#e2e2e2",
+                      "on-background": "#1b1c1c",
+                      "primary": "#000000",
+                      "on-tertiary-container": "#848484",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#000000",
+                      "surface-container-low": "#f5f3f3",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "on-primary-container": "#848484",
+                      "inverse-on-surface": "#f2f0f0",
+                      "secondary-container": "#0266ff",
+                      "on-surface": "#1b1c1c",
+                      "surface-container-lowest": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "48px",
+                      "xs": "4px",
+                      "base": "4px",
+                      "container-max": "1280px",
+                      "lg": "24px",
+                      "2xl": "80px",
+                      "gutter": "24px",
+                      "sm": "8px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "display-2xl": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-2xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "76px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f9; /* background */
+            color: #1b1c1c; /* on-background */
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-secondary selection:text-on-secondary overflow-x-hidden">
+<!-- Top Navigation (Mobile Specific - Back Button) -->
+<header class="w-full px-[20px] h-20 flex items-center justify-between z-50 bg-background border-b border-surface-container-highest md:hidden sticky top-0">
+<button aria-label="Go Back" class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-display-lg text-[24px] leading-none font-black tracking-tighter text-primary uppercase">VELOCITY</div>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col justify-center px-[20px] py-xl max-w-[480px] mx-auto w-full md:mt-2xl md:mb-2xl md:px-xl md:border md:border-surface-container-highest md:rounded-[16px] md:bg-surface md:shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="mb-lg text-center md:text-left">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-sm">Create Account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Join VELOCITY for exclusive access and elite performance gear.</p>
+</div>
+<form class="flex flex-col gap-md w-full">
+<!-- Name Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="name">Full Name</label>
+<div class="relative">
+<input class="w-full h-12 px-sm py-sm border border-surface-container-highest bg-surface rounded-DEFAULT font-body-md text-primary placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" id="name" name="name" placeholder="Enter your full name" required="" type="text"/>
+</div>
+</div>
+<!-- Email Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full h-12 px-sm py-sm border border-surface-container-highest bg-surface rounded-DEFAULT font-body-md text-primary placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant" for="password">Password</label>
+<div class="relative">
+<input class="w-full h-12 px-sm py-sm border border-surface-container-highest bg-surface rounded-DEFAULT font-body-md text-primary placeholder-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200" id="password" name="password" placeholder="Create a password" required="" type="password"/>
+</div>
+<p class="font-label-sm text-[10px] text-on-surface-variant mt-1">Must be at least 8 characters long.</p>
+</div>
+<!-- CTA Button -->
+<button class="mt-sm w-full h-12 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest rounded-[8px] flex items-center justify-center hover:bg-inverse-surface active:scale-[0.98] transition-all duration-200 group" type="submit">
+<span>Create Account</span>
+<span class="material-symbols-outlined ml-2 text-[18px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<div class="mt-lg text-center font-body-md text-body-md text-on-surface-variant">
+            Already have an account? 
+            <a class="text-primary font-title-md text-[16px] underline hover:text-secondary transition-colors duration-200" href="#">Sign In</a>
+</div>
+<div class="mt-xl text-center">
+<p class="font-label-sm text-[10px] text-outline-variant uppercase">By creating an account, you agree to our <a class="underline" href="#">Terms</a> &amp; <a class="underline" href="#">Privacy</a></p>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Profile &amp; Orders</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#efeded",
+                      "surface-variant": "#e3e2e2",
+                      "on-secondary-fixed": "#001849",
+                      "inverse-on-surface": "#f2f0f0",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#848484",
+                      "surface-container-highest": "#e3e2e2",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#f9f7ff",
+                      "on-primary-fixed-variant": "#474747",
+                      "inverse-surface": "#303031",
+                      "tertiary": "#000000",
+                      "surface-container-low": "#f5f3f3",
+                      "on-surface-variant": "#4c4546",
+                      "on-error": "#ffffff",
+                      "primary": "#000000",
+                      "inverse-primary": "#c6c6c6",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-container-high": "#e9e8e7",
+                      "on-background": "#1b1c1c",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface": "#1b1c1c",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#848484",
+                      "background": "#fbf9f9",
+                      "secondary-fixed": "#dae1ff",
+                      "surface": "#fbf9f9",
+                      "outline": "#7e7576",
+                      "surface-tint": "#5e5e5e",
+                      "surface-bright": "#fbf9f9",
+                      "secondary-container": "#0266ff",
+                      "surface-dim": "#dbdad9",
+                      "outline-variant": "#cfc4c5",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary": "#0050cc",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "primary-fixed": "#e2e2e2",
+                      "primary-container": "#1b1b1b",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "on-tertiary-fixed-variant": "#474747"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "xl": "48px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "base": "4px",
+                      "container-max": "1280px",
+                      "2xl": "80px"
+              },
+              "fontFamily": {
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "display-2xl": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "letterSpacing": "0",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-0.03em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "display-2xl": [
+                              "72px",
+                              {
+                                      "lineHeight": "76px",
+                                      "letterSpacing": "-0.04em",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased pb-24 selection:bg-primary selection:text-on-primary">
+<!-- Top App Bar -->
+<header class="fixed top-0 left-0 right-0 z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant h-20 px-5 flex items-center justify-between">
+<div class="font-display-lg text-display-lg font-black tracking-tighter text-primary">VELOCITY</div>
+<div class="flex gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors text-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-5 max-w-lg mx-auto">
+<!-- Profile Section -->
+<section class="mb-xl">
+<div class="flex flex-col items-center mb-lg">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-surface-container mb-md shadow-sm">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="A striking black and white studio portrait of an athlete in profile. High-contrast lighting highlights their focused expression and the sleek texture of their premium athletic wear. The aesthetic is clean, modern, and intensely focused, embodying high performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMwUmtPeHWuS_WoxcxYudRxVh2anlFSI80xLtg6fAX0o_znz6mlZenWJhcOx6uD4k_uJ9mONh-vMGGNmbV0pS1GaXoCjENEaZSuPPj3nzqzU-i2Jdc7HWPF50q7K3n5ZejiesaDFIBJPsvbBSD6mqzJy2FOUFIuiC7vxPzngPNnNmbL3M8sY4JzTfnxN28Cbs6r6MsK95B0CxzNF4DlTDmX3NZuVB8eTPzW_WkTlqRL5daEfYekXSy"/>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-center mb-xs">ALEX MERCER</h1>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Elite Performance Tier</p>
+</div>
+<div class="grid grid-cols-2 gap-md mb-md">
+<div class="bg-surface-container-low p-md rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-title-md text-title-md text-primary mb-1">12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Active Orders</span>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-title-md text-title-md text-primary mb-1">2,450</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Points</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-title-md text-title-md active:scale-[0.98] transition-transform">
+                Edit Profile
+            </button>
+</section>
+<!-- Orders Section -->
+<section>
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Recent Orders</h2>
+<button class="text-secondary font-label-sm text-label-sm uppercase tracking-widest hover:underline">View All</button>
+</div>
+<div class="space-y-md">
+<!-- Order Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-start border-b border-surface-container pb-md mb-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Order #V-8829</p>
+<p class="font-title-md text-title-md">Delivered</p>
+</div>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm font-label-sm text-on-surface">Oct 24</span>
+</div>
+<div class="flex gap-md mb-md">
+<div class="w-20 h-20 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist product shot of an advanced pair of running shoes in stark black and white. The shoe is positioned on a pristine white surface with soft, diffused shadows. The focus is on the sleek aerodynamic design and textured mesh upper, reflecting high-end athletic gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWJzXUbhuskepqibbFIlPA29BP2_FPXDVIhQsyb3mMd4lDXeJ2wvKdI45EjgNK36uOXScI4Kgf0qOCRUL0IYN-Q-rk294PzZCwEk6d8k3bJbEgaRmAMmaZZr3VTTvJ0ht1lLJ15W_Ta1MsEYsi-fqln8Buxts8NAAjLtzBTKBceH6hBclDnYjm8RpN7O9uPUkOqtVorsGAEAzFiyMB94xJ1IdQowUM8yjP-K-gmodCH0Ga7w-dvWjq"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-title-md text-title-md mb-1">AeroKnit Pro Runners</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Size 11 • Obsidian Black</p>
+<p class="font-title-md text-title-md">$185.00</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 bg-surface-container-low border border-outline-variant text-on-surface py-2 rounded-lg font-title-md text-title-md text-sm active:scale-[0.98] transition-transform">Buy Again</button>
+<button class="flex-1 bg-secondary text-on-secondary py-2 rounded-lg font-title-md text-title-md text-sm active:scale-[0.98] transition-transform">Track Return</button>
+</div>
+</div>
+<!-- Order Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-start border-b border-surface-container pb-md mb-md">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mb-1">Order #V-8751</p>
+<p class="font-title-md text-title-md">In Transit</p>
+</div>
+<span class="bg-surface-container px-2 py-1 rounded text-label-sm font-label-sm text-on-surface">Oct 18</span>
+</div>
+<div class="flex gap-md mb-md">
+<div class="w-20 h-20 bg-surface-container rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A high-contrast product image of a sleek, black athletic compression shirt folded neatly. The fabric shows subtle technical patterns and breathability zones. Lit with sharp, cool white light to emphasize the performance materials against a pure white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChBV46uPRIYTff-ax_ipBiJcsTJ0LP5zVCNyl1B0Y9Y-CMlhl6z54L5le1h3j7q4uY980rsXv1jaCS5AASr_TJ-ViCiKaNm-d_WiEPAsbfXxKZL96xfCUVM2Y6_c_Exgm4A41YuV38rB2wZWKau1sAGHNJXvozcYTLSZ7nK-v1VEL3QRumeksOSMvhP525ytQn1V1gS2oPGqjodG1c2SEl6sFacdXG0HNNjXrb7VP3O6l5ySaGXE6l"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-title-md text-title-md mb-1">Core Compression Top</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Size M • Stealth</p>
+<p class="font-title-md text-title-md">$65.00</p>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-2 rounded-lg font-title-md text-title-md text-sm active:scale-[0.98] transition-transform">Track Package</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-40 bg-surface/90 backdrop-blur-md h-16 flex justify-around items-center border-t border-outline-variant shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">home</span>
+<span class="font-label-sm text-label-sm text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">search</span>
+<span class="font-label-sm text-label-sm text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-primary font-bold border-t-2 border-primary -mt-[2px]" href="#">
+<span class="material-symbols-outlined mb-1 text-xl" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm text-[10px]">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined mb-1 text-xl">settings</span>
+<span class="font-label-sm text-label-sm text-[10px]">Settings</span>
+</a>
+</nav>
+</body></html>

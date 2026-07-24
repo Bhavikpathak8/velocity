@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Order History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#efeded",
+                      "surface-variant": "#e3e2e2",
+                      "on-secondary-fixed": "#001849",
+                      "inverse-on-surface": "#f2f0f0",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#848484",
+                      "surface-container-highest": "#e3e2e2",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#f9f7ff",
+                      "on-primary-fixed-variant": "#474747",
+                      "inverse-surface": "#303031",
+                      "tertiary": "#000000",
+                      "surface-container-low": "#f5f3f3",
+                      "on-surface-variant": "#4c4546",
+                      "on-error": "#ffffff",
+                      "primary": "#000000",
+                      "inverse-primary": "#c6c6c6",
+                      "on-primary-fixed": "#1b1b1b",
+                      "surface-container-high": "#e9e8e7",
+                      "on-background": "#1b1c1c",
+                      "tertiary-container": "#1b1b1b",
+                      "on-surface": "#1b1c1c",
+                      "on-secondary": "#ffffff",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-tertiary-container": "#848484",
+                      "background": "#fbf9f9",
+                      "secondary-fixed": "#dae1ff",
+                      "surface": "#fbf9f9",
+                      "outline": "#7e7576",
+                      "surface-tint": "#5e5e5e",
+                      "surface-bright": "#fbf9f9",
+                      "secondary-container": "#0266ff",
+                      "surface-dim": "#dbdad9",
+                      "outline-variant": "#cfc4c5",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "secondary": "#0050cc",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "primary-fixed": "#e2e2e2",
+                      "primary-container": "#1b1b1b",
+                      "on-secondary-fixed-variant": "#003fa4",
+                      "secondary-fixed-dim": "#b3c5ff",
+                      "on-tertiary-fixed-variant": "#474747"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "md": "16px",
+                      "xs": "4px",
+                      "xl": "48px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "base": "4px",
+                      "container-max": "1280px",
+                      "2xl": "80px"
+              },
+              "fontFamily": {
+                      "title-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "display-2xl": ["Inter"]
+              },
+              "fontSize": {
+                      "title-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "display-2xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-filled { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased flex flex-col md:flex-row">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface dark:bg-surface-dim border-r border-outline-variant dark:border-outline z-50">
+<div class="flex flex-col h-full py-xl">
+<div class="px-lg mb-xl">
+<h1 class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-surface">VELOCITY</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">Elite Performance</p>
+</div>
+<nav class="flex-1 flex flex-col gap-sm">
+<!-- Profile -->
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Profile
+                </a>
+<!-- Orders (ACTIVE) -->
+<a class="flex items-center gap-md px-lg py-md text-primary dark:text-on-surface font-bold border-r-4 border-primary bg-surface-container-low active:scale-95 transition-transform font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined icon-filled">shopping_bag</span>
+                    Orders
+                </a>
+<!-- Addresses -->
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">location_on</span>
+                    Addresses
+                </a>
+<!-- Settings -->
+<a class="flex items-center gap-md px-lg py-md text-on-surface-variant dark:text-outline hover:text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95 transition-transform font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</nav>
+<div class="px-lg mt-auto">
+<div class="flex items-center gap-md p-md rounded-lg bg-surface-container-low border border-outline-variant">
+<img alt="User Profile Avatar" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A close-up studio portrait of a fitness model's face, well-lit with dramatic high-contrast lighting, looking determined, set against a pure white background in a Neo-Minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbTmn0l847PQE4I2uy3QULHDGInouiol1c3ceOn9osfOFBusdIKJdTa62iBCnp3cNiY8v5sQ0AFZ3kHVu0iORBi8dOkRlKkTL2QdDM1XTPA_7XODnVcASQhIFHae7WDb5yLpR2R8jmcXyrc7le4XdDOYpcw1P0aZ75j_DEzCnJJnhse7dQvOcgZlCYKxDDRJNb9m7EMJ8FBWrBIaTHyJZFLsdX6A0WvD437cPAOxppWl1i67OGCv5_"/>
+<div>
+<p class="font-label-sm text-label-sm text-primary">Alex Mercer</p>
+<p class="text-xs text-on-surface-variant">Pro Member</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full md:w-auto md:right-0 md:left-64 z-40 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-20 px-xl">
+<!-- Mobile Brand (Hidden on Desktop) -->
+<div class="md:hidden flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<h1 class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-surface" style="font-size: 24px; line-height: 24px;">VELOCITY</h1>
+</div>
+<!-- Spacer for Desktop to align actions right if search was center, but JSON says "search_bar": "on_right" -->
+<div class="hidden md:block flex-1"></div>
+<div class="flex items-center gap-md justify-end flex-1">
+<!-- Search -->
+<div class="relative hidden sm:block w-64 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant transition-colors group-focus-within:text-primary">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-lowest border border-outline-variant rounded-full font-body-md text-body-md text-primary focus:outline-none focus:border-primary transition-colors" placeholder="Search orders..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-70 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors cursor-pointer active:opacity-70 text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<main class="flex-1 px-4 md:px-xl pt-28 pb-2xl md:ml-64 max-w-container-max mx-auto w-full">
+<div class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight">Order History</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">Review and manage your recent elite performance gear purchases.</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-4 py-2 border border-outline-variant bg-surface rounded-DEFAULT font-label-sm text-label-sm text-primary hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 16px;">filter_list</span>
+                        Filter
+                    </button>
+</div>
+</div>
+<!-- Orders List Container -->
+<div class="flex flex-col gap-md">
+<!-- Order Card 1 (Delivered) -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col lg:flex-row gap-lg justify-between items-start lg:items-center hover:border-outline transition-colors group">
+<div class="flex flex-col gap-sm flex-1">
+<div class="flex items-center gap-md">
+<h3 class="font-title-md text-title-md text-primary">#VL-94285</h3>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded-sm bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Delivered
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Placed on Oct 24, 2024</p>
+<!-- Visual Product Summary -->
+<div class="flex gap-sm mt-4">
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant/50 overflow-hidden relative">
+<img alt="Product Image" class="w-full h-full object-cover mix-blend-multiply" data-alt="A sleek, matte black high-performance running shoe with sharp geometric lines and a thick white sole, professionally photographed in a minimalist studio setting with bright, crisp lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUW6Xv9Vn5t8evNARc2XbndEz-fDJiytzp6YOPr2LFyWQ0cOckj1eBpjOyE6Aqm0X9XdwTggu2nPZ3x3zROeGE13qXrjnhofGNjIME_8qpiwgoSL9C_aYxMhqro-Zi2FYTfN41J_n1LXE2TxHwV-G4mS1qhmK5IrHIOAHgIQc7gceP0oTTXBeMX4KzPzfmdlER8mwET4cBKUPAUitV-2b4bxneWArFdxbrTiaQso9-gXwD83WRKM3i"/>
+</div>
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant/50 overflow-hidden relative">
+<img alt="Product Image" class="w-full h-full object-cover mix-blend-multiply" data-alt="A folded stack of premium athletic apparel in pure white and deep black, showcasing high-tech moisture-wicking fabric textures under stark, focused studio lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw9OfJOI10-MS979KkVtAlNZi17Jk6lajDPwEVbxmHWXLMHLR4Q7Js_xBKKcPthU00yd8pf1Fo-LChFot68KoIlDr2L2Z6Vr3P8Rce4-oIm6mdtsQq3qCvrPrZOP_LNm9nytatzVKM8mA7xskUP1EG-x3tZGQqNCPePT156Jj-H0bAkc3yVFUt-3H_jTyzmR2JlcjxD6YzdpdrkU38apk2eZF2Wj5m0Wh4McIWmg8b5GpkQ6c5WU7e"/>
+</div>
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant">+1</span>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-auto flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-center gap-md border-t lg:border-t-0 border-outline-variant pt-md lg:pt-0">
+<div class="text-left lg:text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Amount</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$329.40</p>
+</div>
+<button class="bg-secondary text-on-secondary font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity active:scale-95 whitespace-nowrap">
+                            View Details
+                        </button>
+</div>
+</div>
+<!-- Order Card 2 (In Transit) -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col lg:flex-row gap-lg justify-between items-start lg:items-center hover:border-outline transition-colors group">
+<div class="flex flex-col gap-sm flex-1">
+<div class="flex items-center gap-md">
+<h3 class="font-title-md text-title-md text-primary">#VL-94210</h3>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded-sm bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined" style="font-size: 14px;">local_shipping</span>
+                                In Transit
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Placed on Oct 21, 2024</p>
+<div class="flex gap-sm mt-4">
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant/50 overflow-hidden relative">
+<img alt="Product Image" class="w-full h-full object-cover mix-blend-multiply" data-alt="A high-tech, minimalist black fitness tracking watch resting perfectly flat against a pristine white surface, highlighting its sleek metallic bezel and smooth silicone strap." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPTXvl0WA9AULNkhxPFHodWfPogk9M36j_btfmnWxlvyyW9A-mslKj5NqqfkMDdGKKvloseSeMkvZGPQIWGj7jW-a9Q2ghEdFzbQxnFmJHYtCu_M__OWX5CC9U6Ehn__43bdUN-qFPj2qkVbKvp2S8-YmkZyt7_MXw47Zuyfhe8m7__XqPa-H_B0J8UpCSfm90tky1qK3yceadz6UXXVkgGP-SzDvTwCFug83AgmhMZ-fbvJsYdxj"/>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-auto flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-center gap-md border-t lg:border-t-0 border-outline-variant pt-md lg:pt-0">
+<div class="text-left lg:text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Amount</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$189.00</p>
+</div>
+<button class="bg-secondary text-on-secondary font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity active:scale-95 whitespace-nowrap">
+                            Track Order
+                        </button>
+</div>
+</div>
+<!-- Order Card 3 (Delivered) -->
+<div class="bg-surface border border-outline-variant rounded-xl p-lg flex flex-col lg:flex-row gap-lg justify-between items-start lg:items-center hover:border-outline transition-colors group">
+<div class="flex flex-col gap-sm flex-1">
+<div class="flex items-center gap-md">
+<h3 class="font-title-md text-title-md text-primary">#VL-93902</h3>
+<span class="flex items-center gap-1.5 px-2 py-1 rounded-sm bg-surface-container text-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                Delivered
+                            </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Placed on Sep 15, 2024</p>
+<div class="flex gap-sm mt-4">
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant/50 overflow-hidden relative">
+<img alt="Product Image" class="w-full h-full object-cover mix-blend-multiply" data-alt="A pair of crisp white athletic socks with a single bold black stripe, perfectly folded and photographed from above on a clean, light grey studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4eN2xSCVIlvS2CcbfFKpeFo42F8c1SJht7lzfjfnLbqzz73q5bt_twuPDQL2UM_i5LxrdTPw1BfSTKpA1O7Hu_HdNKbis-_v-nVUu9pNIRsvtAftzCwYdMyQZbRN7eImwga-IF9q6RVE4BvBeCPsmreTQxNosfadvGmV_679XgSZ1Yfega98RHzsoYLaSExqrgg_ljl3U5RJApEl0RDc1m7zuZKEUaTJn0wFz_zxMTjOK2QRiGe5W"/>
+</div>
+<div class="w-16 h-16 rounded-md bg-surface-container-low border border-outline-variant/50 overflow-hidden relative">
+<img alt="Product Image" class="w-full h-full object-cover mix-blend-multiply" data-alt="A matte black stainless steel water bottle with a streamlined, ergonomic design, dramatically lit to emphasize its sleek silhouette against a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ75v9PZ1e1Kf1LvbJISw88Cj3eIdH40KzbXaLUasUqHyYSa83RAkipK5H2w9RczHwXMJ9wQ7wrfaFrkneue2QdwZ_4QWepi5LAVTd1xsgzuhLPc--cO1Hh2LYJS4Ll02Eipa8Eqyx6RxX5c2UYmbdNTGqh21PlyAPqmAdaCpcaHCYA0E_DMmt8S2G8J1SbBdLC1tgubrPA5JmGXkGqN9o4zP5HrFKgWReyLpsuEX-WEr0S8KJJ8hh"/>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-auto flex flex-row lg:flex-col items-center lg:items-end justify-between lg:justify-center gap-md border-t lg:border-t-0 border-outline-variant pt-md lg:pt-0">
+<div class="text-left lg:text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Total Amount</p>
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-primary">$74.50</p>
+</div>
+<button class="bg-surface-container text-primary border border-outline-variant font-label-sm text-label-sm px-6 py-3 rounded-DEFAULT hover:bg-surface-container-highest transition-colors active:scale-95 whitespace-nowrap">
+                            View Details
+                        </button>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-xl flex justify-center">
+<button class="px-8 py-3 border border-outline-variant bg-surface rounded-DEFAULT font-label-sm text-label-sm text-primary hover:bg-surface-container-low transition-colors">
+                    Load More Orders
+                </button>
+</div>
+</main>
+</div>
+</body></html>

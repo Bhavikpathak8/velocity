@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Shop All</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#000000",
+                    "on-secondary-container": "#f9f7ff",
+                    "on-tertiary-container": "#848484",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-container-highest": "#e3e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#474747",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "on-secondary-fixed-variant": "#003fa4",
+                    "surface-bright": "#fbf9f9",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#303031",
+                    "inverse-primary": "#c6c6c6",
+                    "background": "#fbf9f9",
+                    "secondary": "#0050cc",
+                    "secondary-container": "#0266ff",
+                    "surface-container": "#efeded",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "secondary-fixed": "#dae1ff",
+                    "on-primary-container": "#848484",
+                    "tertiary-container": "#1b1b1b",
+                    "outline": "#7e7576",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "surface": "#fbf9f9",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "on-background": "#1b1c1c",
+                    "surface-tint": "#5e5e5e",
+                    "surface-container-high": "#e9e8e7",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary-fixed": "#1b1b1b",
+                    "tertiary": "#000000",
+                    "on-surface-variant": "#4c4546",
+                    "secondary-fixed-dim": "#b3c5ff",
+                    "primary-container": "#1b1b1b",
+                    "surface-variant": "#e3e2e2",
+                    "on-secondary-fixed": "#001849",
+                    "inverse-on-surface": "#f2f0f0",
+                    "surface-dim": "#dbdad9",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "xs": "4px",
+                    "base": "4px",
+                    "xl": "48px",
+                    "lg": "24px",
+                    "2xl": "80px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "title-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "display-2xl": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "0",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "52px",
+                                    "letterSpacing": "-0.03em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "display-2xl": [
+                            "72px",
+                            {
+                                    "lineHeight": "76px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "36px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-primary docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-on-primary-fixed-variant flat no shadows">
+<div class="flex justify-between items-center px-lg py-md w-full max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg font-black tracking-tighter text-primary dark:text-on-primary" href="#">VELOCITY</a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex gap-lg font-body-md text-body-md">
+<a class="text-primary dark:text-on-primary border-b-2 border-primary dark:border-secondary pb-1 active:scale-95 duration-150 ease-in-out" href="#">Shop</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out" href="#">About</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container hover:text-primary dark:hover:text-on-primary transition-colors hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out" href="#">Support</a>
+</nav>
+<div class="flex items-center gap-md text-primary dark:text-on-primary">
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out p-sm"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out p-sm"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-150 ease-in-out p-sm"><span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span></button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-md md:px-xl py-xl flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 sticky top-2xl h-fit pb-lg self-start border-r-0 md:border-r md:border-outline-variant pr-0 md:pr-lg hidden md:block">
+<h2 class="font-title-md text-title-md text-primary mb-lg">Filters</h2>
+<!-- Category Filter -->
+<div class="mb-lg border-b border-surface-container-high pb-lg">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Category</h3>
+<div class="space-y-sm font-body-md text-body-md">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-outline-variant rounded-sm text-primary focus:ring-primary checked:bg-primary" type="checkbox"/>
+<span class="group-hover:text-secondary transition-colors">Footwear</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-outline-variant rounded-sm text-primary focus:ring-primary checked:bg-primary" type="checkbox"/>
+<span class="group-hover:text-secondary transition-colors">Apparel</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-outline-variant rounded-sm text-primary focus:ring-primary checked:bg-primary" type="checkbox"/>
+<span class="group-hover:text-secondary transition-colors">Accessories</span>
+</label>
+</div>
+</div>
+<!-- Size Filter -->
+<div class="mb-lg border-b border-surface-container-high pb-lg">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Size</h3>
+<div class="flex flex-wrap gap-xs font-label-sm text-label-sm">
+<button class="w-10 h-10 border border-outline-variant rounded hover:border-primary focus:border-primary focus:bg-primary focus:text-on-primary transition-all">XS</button>
+<button class="w-10 h-10 border border-outline-variant rounded hover:border-primary focus:border-primary focus:bg-primary focus:text-on-primary transition-all">S</button>
+<button class="w-10 h-10 border border-outline-variant rounded hover:border-primary focus:border-primary focus:bg-primary focus:text-on-primary transition-all">M</button>
+<button class="w-10 h-10 border border-outline-variant rounded hover:border-primary focus:border-primary focus:bg-primary focus:text-on-primary transition-all">L</button>
+<button class="w-10 h-10 border border-outline-variant rounded hover:border-primary focus:border-primary focus:bg-primary focus:text-on-primary transition-all">XL</button>
+</div>
+</div>
+<!-- Color Filter -->
+<div class="mb-lg border-b border-surface-container-high pb-lg">
+<h3 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-md">Color</h3>
+<div class="flex gap-sm">
+<button aria-label="Black" class="w-8 h-8 rounded-full bg-primary border border-outline-variant ring-2 ring-transparent focus:ring-secondary transition-all"></button>
+<button aria-label="White" class="w-8 h-8 rounded-full bg-surface-container-lowest border border-outline-variant ring-2 ring-transparent focus:ring-secondary transition-all"></button>
+<button aria-label="Blue" class="w-8 h-8 rounded-full bg-secondary border border-outline-variant ring-2 ring-transparent focus:ring-secondary transition-all"></button>
+<button aria-label="Grey" class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant ring-2 ring-transparent focus:ring-secondary transition-all"></button>
+</div>
+</div>
+<button class="w-full bg-surface-container-lowest text-primary border border-primary font-label-sm text-label-sm uppercase tracking-widest py-md rounded-lg hover:bg-surface-container transition-colors">Clear Filters</button>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-grow">
+<!-- Top Controls (Mobile Filters + Sort) -->
+<div class="flex justify-between items-center mb-lg border-b border-surface-container-high pb-md">
+<button class="md:hidden flex items-center gap-xs font-body-md text-body-md text-primary">
+<span class="material-symbols-outlined" data-icon="tune">tune</span> Filters
+                </button>
+<div class="text-on-surface-variant font-body-md text-body-md hidden md:block">Showing 9 Results</div>
+<div class="flex items-center gap-sm font-body-md text-body-md">
+<label class="text-on-surface-variant hidden sm:inline" for="sort">Sort by:</label>
+<select class="border-none bg-transparent font-title-md text-title-md focus:ring-0 cursor-pointer text-primary" id="sort">
+<option>Newest</option>
+<option>Price: Low-High</option>
+<option>Price: High-Low</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg lg:gap-gutter">
+<!-- Product 1 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A sleek, aerodynamic running shoe in absolute black with sharp white angular accents. Studio lighting on a clean white background, high contrast neo-minimalist style, technical athletic gear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_lxTwHal9dejgkQhwRit0plVmXcGz4bswYcQKH-zCgQ8KMFTTpH9v1aZ7oEG681mxQEUD_LRr2mF4riRHttPp9rzqyCSCvJllpm7nFhKGcpuyNaXPq-XTgquAPUVz71I6A984SxJlG_qfLasgXKiOYJ8lvg36GcA5d14x85IGuClTnQhm-NTB5Q_UpyTJMPIMicInOAZMY71aU3ZgG4Zm-X0nof0CXb1QLtAVwARF0Zvg5mccXlzS"/>
+<button class="absolute top-sm right-sm p-sm bg-surface-container-lowest/80 backdrop-blur rounded-full text-primary hover:text-secondary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Footwear</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">AeroMax Elite Runners</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$180</span>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A lightweight, translucent white windbreaker jacket with subtle electric blue zipper details. Photographed flat on a stark white surface with sharp, minimalist shadows, conveying high-performance technical apparel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLhbACBFHPqU_BtHl2Ro7TVlChM14aAGNopDZG6gsYCGKhM_lg519PV6E3qfsMBB5qtVLFyUf8x2zqZfSdYesbNe_5vjaGbc4DvvS_cb1CDhWxxyvPhm2Bop4m2hp1yKFAlKqWv3Piru-qE3VOSlfz8o1hJPeIZUM7cvd2BDmBci6heXrf3bU3l_TgE3b59jWVwtIHyGAcqf_7jZRSYY3bOZliPjHfD8HqLvm9T6cxH0KgWLV36Z_9"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Apparel</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Strata Wind Shell</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$120</span>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A tight-fitting, matte black compression long-sleeve top with faint geometric texture lines. Displayed on a minimalist invisible mannequin against a pure white background, emphasizing sleek athletic performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHiS2wutXLbWoQy_22eA1hCxhtF6bNXmhCH8a0Cn-blmznYhCeLEajZMFThYbgV-UI7ztp4ggTvGcv7rEZiJQ2tQplha5gZ7uhKvancsBt4QZ1TkuF7rNFXwKBorxG4rqKJ8-smS4soetn4Cfe72roMWuHbz4Aqp9yvGNxTotUp8JkPTCD5oI5emSUpZBokN04EIo7LPqOesQmyIdMhQWKtPcUIJfH2CSpxxVtR1fRqEWwDl-3_o6F"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Apparel</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Core Compression Top</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$65</span>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist athletic duffel bag in stark black with heavy-duty matte hardware and subtle branding. Photographed in sharp studio lighting to highlight the technical fabric texture against a bright white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-INR3pBNF4Rdu8pAgUVPjjNwFypyWClYjL3cKug5HBIAvnudT4MW6SrSCu14BfTQ2SfcUMx18ABtUUe5lI0nVy991-6VFo76QgLEIW0g4pGPll7_nDitBuDudr12u0v8v3-ACwB2Gvr_B6HMRdp6RA7OOhsF_yLzv2KsO55zYjApyKFIhUGvwsp3f4kyKtW7StItonUSFCodla6zGLm9wMQeggdz56Am-Sk0CKX0TT_ui3OHZgfS0"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Accessories</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Vector Commuter Duffel</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$145</span>
+</div>
+</article>
+<!-- Product 5 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A pair of minimalist running shorts in electric blue, featuring laser-cut ventilation details. Photographed against a stark white background with sharp, clean lighting typical of premium athletic e-commerce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbAbIWN3CI8Qcf9M9OB0AZmCrNIdIBGVwxaqqYZT-eA7NOaU5l0Ydw0t-9ofowhzbUC0Lb0QtGRCWsA8yzFhELHSBo_Ku2bo_y7R40PZqT8ygmS9iMVPROysDempRlMMhdpHGtdnNrF8IiHUQI1sz2Z7XPSqpOgpPgVFROLk9pHdsf66xjlvlv-coiip3VBYUh6DfoeIFo9w22VdzQ-w1UPLK3fJy4NnrvxRBAminFPOctaKtv7xtf"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Apparel</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Aero Split Shorts</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$55</span>
+</div>
+</article>
+<!-- Product 6 -->
+<article class="group flex flex-col cursor-pointer">
+<div class="relative bg-surface-container-low rounded-xl overflow-hidden aspect-[4/5] mb-md border-[0.5px] border-black/5">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical running socks in pristine white with stark black geometric padding zones. Laid flat on a white surface with extremely crisp lighting, conveying high-end minimalist athletic wear." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCha7_VLzIxupPcy6Cr2BES61HCYc38GR7LXIgnQifxWRcedzMMLRVbFOg-E3cvcEnB0bmh1__7AxjiMV1LEHPLjjtdUsA-5-B1JzCv5kuHHr-LCn0niZ-rT48ZriyJ5ZQZUIh3fgvjgiAfKrIrcSMQ5VIf_eu6qaenPcUtQgf_hVCu4Fo6l6FV3CKahWvi48_y5_G4pcGWQRpbeHlFTYUOUA9fHVAk6kRqGbCNmNyEYyPQ9IPg-3yA"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-xs">Accessories</div>
+<h3 class="font-title-md text-title-md text-primary group-hover:text-secondary transition-colors">Precision Ankle Socks</h3>
+</div>
+<span class="font-title-md text-title-md text-primary">$18</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="bg-primary dark:bg-surface-container-lowest w-full mt-auto">
+<div class="flex flex-col items-center pt-2xl pb-lg px-lg w-full max-w-container-max mx-auto gap-xl">
+<div class="font-display-lg text-display-lg font-black text-on-primary dark:text-primary">VELOCITY</div>
+<nav class="flex flex-wrap justify-center gap-md font-label-sm text-label-sm uppercase tracking-widest">
+<a class="text-on-primary-container dark:text-on-tertiary-container hover:text-on-primary dark:hover:text-primary hover:text-secondary transition-colors cursor-pointer transition-all" href="#">Privacy Policy</a>
+<a class="text-on-primary-container dark:text-on-tertiary-container hover:text-on-primary dark:hover:text-primary hover:text-secondary transition-colors cursor-pointer transition-all" href="#">Terms of Service</a>
+<a class="text-on-primary-container dark:text-on-tertiary-container hover:text-on-primary dark:hover:text-primary hover:text-secondary transition-colors cursor-pointer transition-all" href="#">Shipping &amp; Returns</a>
+<a class="text-on-primary-container dark:text-on-tertiary-container hover:text-on-primary dark:hover:text-primary hover:text-secondary transition-colors cursor-pointer transition-all" href="#">Sustainability</a>
+<a class="text-on-primary-container dark:text-on-tertiary-container hover:text-on-primary dark:hover:text-primary hover:text-secondary transition-colors cursor-pointer transition-all" href="#">Store Locator</a>
+</nav>
+<div class="text-on-primary dark:text-primary font-label-sm text-label-sm uppercase tracking-widest opacity-60">
+                © 2024 VELOCITY. ALL RIGHTS RESERVED. ENGINEERED FOR PERFORMANCE.
+            </div>
+</div>
+</footer>
+</body></html>

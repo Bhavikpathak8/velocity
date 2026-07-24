@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELOCITY - Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efeded",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-primary-fixed": "#1b1b1b",
+                        "secondary-fixed": "#dae1ff",
+                        "on-secondary-fixed-variant": "#003fa4",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#7e7576",
+                        "background": "#fbf9f9",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-container": "#848484",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#0266ff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "primary-fixed": "#e2e2e2",
+                        "surface": "#fbf9f9",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-surface": "#303031",
+                        "primary-container": "#1b1b1b",
+                        "on-surface-variant": "#4c4546",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#001849",
+                        "surface-variant": "#e3e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "secondary": "#0050cc",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dbdad9",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-fixed-dim": "#b3c5ff",
+                        "surface-tint": "#5e5e5e",
+                        "on-secondary-container": "#f9f7ff",
+                        "tertiary-container": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#c6c6c6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e8e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "48px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "2xl": "80px"
+                    },
+                    "fontFamily": {
+                        "display-2xl": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-2xl": ["72px", { "lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "display-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant w-full transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-gutter w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<a class="font-display-lg text-display-lg font-black tracking-tighter text-primary" href="#">VELOCITY</a>
+<nav class="hidden md:flex gap-lg items-center pt-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Shop</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Collections</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="Search" class="p-2 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button aria-label="shopping_bag" class="p-2 text-primary font-bold border-b-2 border-primary pb-1 flex items-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</button>
+<button aria-label="person" class="p-2 hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-gutter py-xl md:py-2xl">
+<div class="mb-lg md:mb-xl">
+<h1 class="font-display-lg text-display-lg text-primary mb-sm">Your Cart</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Review your selections before checkout.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl lg:gap-2xl">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-md sm:gap-lg bg-surface-container-lowest p-md rounded-xl border border-outline-variant items-start sm:items-center group">
+<div class="w-full sm:w-32 aspect-square rounded-lg bg-surface-container overflow-hidden border-[0.5px] border-outline-variant/30 flex-shrink-0">
+<img alt="AeroMax Elite" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="High quality studio photography of a sleek black athletic shoe 'AeroMax Elite' against a pure white background. Sharp lighting, high contrast, neo-minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqmmFCyeTBXnwShINvvsqOaeaQJqtttHveY9D-mC6qndQK1eyosw8o0msHKSgof9OrIXhrEVJDk3QR2puO3SaMPnpbcsuDMw5peUQVxW5JGKDknKgvb0kFEBoY4O1bQE_eimTdGcPRaA77KpfLcGgfZD-vvfanSd34A7uRF8d9gItb1ox0zsfLjaEb0MTKXv_hXFlxI9CAVnX8YyE2H_4kYt7AzaAWFRLqyvB7WLvRKR1dZs8MPw19"/>
+</div>
+<div class="flex-grow flex flex-col sm:flex-row justify-between w-full">
+<div class="mb-md sm:mb-0">
+<h3 class="font-title-md text-title-md text-primary mb-xs">AeroMax Elite</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Performance Running</p>
+<span class="inline-block px-sm py-xs bg-surface-container-low rounded font-label-sm text-label-sm text-on-surface">Size: M 10.5</span>
+</div>
+<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-md">
+<div class="font-title-md text-title-md text-primary">$180.00</div>
+<div class="flex items-center border border-outline-variant rounded-md overflow-hidden">
+<button class="px-3 py-1 hover:bg-surface-container transition-colors text-on-surface"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="px-4 py-1 font-body-md text-body-md text-on-background bg-surface-container-lowest border-x border-outline-variant">1</span>
+<button class="px-3 py-1 hover:bg-surface-container transition-colors text-on-surface"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors mt-2 sm:mt-0 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-md sm:gap-lg bg-surface-container-lowest p-md rounded-xl border border-outline-variant items-start sm:items-center group">
+<div class="w-full sm:w-32 aspect-square rounded-lg bg-surface-container overflow-hidden border-[0.5px] border-outline-variant/30 flex-shrink-0">
+<img alt="Strata Void" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="High quality studio photography of a futuristic white technical jacket 'Strata Void' against a pure white background. Crisp details, high contrast panda aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyZfsbS69u1P1QngtZ_r2IFFwen0exr4HLWo-rnkqt8Y8KyIYqfHUbVEgLQHHyXRWEqO4qusH7q2TEMyjdMRYeLQu5rmIMrJYSeeRFS_b5jAmqCfNMa3Nrw_VandhSj5BV5JODljQhTHHhdAsasKX8oyRYwiQDVWbIMSWAE23F19UAuXk-fJOZDVZyBrQA8zLeSRsJ270SYvgPiKydW8e2Agt22ZyV87OhdzRuX7bvtgyahQesBNow"/>
+</div>
+<div class="flex-grow flex flex-col sm:flex-row justify-between w-full">
+<div class="mb-md sm:mb-0">
+<h3 class="font-title-md text-title-md text-primary mb-xs">Strata Void</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-sm">Weather-Resistant Shell</p>
+<span class="inline-block px-sm py-xs bg-surface-container-low rounded font-label-sm text-label-sm text-on-surface">Size: L</span>
+</div>
+<div class="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-md">
+<div class="font-title-md text-title-md text-primary">$245.00</div>
+<div class="flex items-center border border-outline-variant rounded-md overflow-hidden">
+<button class="px-3 py-1 hover:bg-surface-container transition-colors text-on-surface"><span class="material-symbols-outlined text-[18px]">remove</span></button>
+<span class="px-4 py-1 font-body-md text-body-md text-on-background bg-surface-container-lowest border-x border-outline-variant">2</span>
+<button class="px-3 py-1 hover:bg-surface-container transition-colors text-on-surface"><span class="material-symbols-outlined text-[18px]">add</span></button>
+</div>
+<button class="text-on-surface-variant hover:text-error transition-colors mt-2 sm:mt-0 flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">delete</span> Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Order Summary -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant sticky top-24 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+<h2 class="font-title-md text-title-md text-primary mb-lg border-b border-surface-container-highest pb-md">Order Summary</h2>
+<div class="flex flex-col gap-md mb-lg">
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Subtotal (3 items)</span>
+<span>$670.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Shipping</span>
+<span class="text-on-surface-variant">Calculated at next step</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>Estimated Tax</span>
+<span>$53.60</span>
+</div>
+</div>
+<div class="border-t border-surface-container-highest pt-md mb-lg">
+<div class="flex justify-between items-end">
+<span class="font-title-md text-title-md text-primary">Total</span>
+<span class="font-headline-lg text-headline-lg text-primary">$723.60</span>
+</div>
+</div>
+<button class="w-full py-md px-lg bg-secondary-container text-on-secondary rounded-lg font-title-md text-title-md hover:bg-secondary transition-colors duration-200 flex justify-center items-center gap-2">
+                        CHECKOUT <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<div class="mt-md flex justify-center items-center gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-sm text-label-sm">Secure Checkout</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary w-full mt-auto">
+<div class="w-full py-xl px-gutter flex flex-col md:flex-row justify-between items-start gap-lg max-w-container-max mx-auto">
+<div>
+<div class="font-display-lg text-display-lg font-black text-on-primary mb-md">VELOCITY</div>
+<div class="font-label-sm text-label-sm text-on-primary-container">© 2024 VELOCITY. ALL RIGHTS RESERVED.</div>
+</div>
+<nav class="flex flex-wrap gap-md md:gap-lg pt-2">
+<a class="font-label-sm text-label-sm text-on-primary-container hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-primary-container hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-primary-container hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Shipping</a>
+<a class="font-label-sm text-label-sm text-on-primary-container hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Returns</a>
+<a class="font-label-sm text-label-sm text-on-primary-container hover:text-secondary-fixed-dim transition-colors opacity-80 hover:opacity-100" href="#">Accessibility</a>
+</nav>
+</div>
+</footer>
+</body></html>
