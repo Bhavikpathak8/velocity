@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const CartPage = () => {
+    const { formatPrice } = useCurrency();
     const {
         cartItems,
         updateQuantity,
@@ -53,7 +55,7 @@ export const CartPage = () => {
             <div className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/40 mb-8">
                 {remainingForFreeShipping > 0 ? (
                     <p className="text-xs font-semibold text-on-surface-variant mb-2">
-                        Add <span className="font-extrabold text-primary">${remainingForFreeShipping.toFixed(2)}</span> more to qualify for <span className="font-bold text-secondary">FREE Express Delivery</span>!
+                        Add <span className="font-extrabold text-primary">{formatPrice(remainingForFreeShipping)}</span> more to qualify for <span className="font-bold text-secondary">FREE Express Delivery</span>!
                     </p>
                 ) : (
                     <p className="text-xs font-bold text-emerald-600 mb-2 flex items-center gap-1">
@@ -87,7 +89,7 @@ export const CartPage = () => {
                                 </div>
 
                                 <span className="font-extrabold text-base text-primary min-w-[80px] text-right">
-                                    ${(item.price * item.quantity).toFixed(2)}
+                                    {formatPrice(item.price * item.quantity)}
                                 </span>
 
                                 <button onClick={() => removeFromCart(item.id, item.size, item.color)} className="p-2 text-on-surface-variant hover:text-error">
@@ -123,25 +125,25 @@ export const CartPage = () => {
                     <div className="space-y-2 text-sm text-on-surface-variant pt-2">
                         <div className="flex justify-between">
                             <span>Subtotal</span>
-                            <span className="font-bold text-primary">${subtotal.toFixed(2)}</span>
+                            <span className="font-bold text-primary">{formatPrice(subtotal)}</span>
                         </div>
                         {discount > 0 && (
                             <div className="flex justify-between text-emerald-600 font-bold">
                                 <span>VIP Discount</span>
-                                <span>-${discount.toFixed(2)}</span>
+                                <span>-{formatPrice(discount)}</span>
                             </div>
                         )}
                         <div className="flex justify-between">
                             <span>Estimated Express Delivery</span>
-                            <span className="font-bold text-primary">{shippingFee === 0 ? <span className="text-emerald-600 font-extrabold">FREE</span> : `$${shippingFee.toFixed(2)}`}</span>
+                            <span className="font-bold text-primary">{shippingFee === 0 ? <span className="text-emerald-600 font-extrabold">FREE</span> : formatPrice(shippingFee)}</span>
                         </div>
                         <div className="flex justify-between">
                             <span>Estimated Tax (8%)</span>
-                            <span className="font-bold text-primary">${tax.toFixed(2)}</span>
+                            <span className="font-bold text-primary">{formatPrice(tax)}</span>
                         </div>
                         <div className="flex justify-between text-lg font-black text-primary pt-3 border-t border-outline-variant/40">
                             <span>Order Total</span>
-                            <span>${total.toFixed(2)}</span>
+                            <span>{formatPrice(total)}</span>
                         </div>
                     </div>
 

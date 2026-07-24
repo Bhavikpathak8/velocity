@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const CheckoutPage = () => {
+    const { formatPrice } = useCurrency();
     const { cartItems, subtotal, discount, shippingFee, tax, total, clearCart } = useCart();
     const { user } = useAuth();
     const navigate = useNavigate();
@@ -307,7 +309,7 @@ export const CheckoutPage = () => {
                                 <div>
                                     <h4 className="font-bold text-sm text-emerald-900 dark:text-emerald-300">Cash on Delivery (COD) Selected</h4>
                                     <p className="text-xs text-emerald-700 dark:text-emerald-400 mt-1 leading-relaxed">
-                                        Pay <strong>${total.toFixed(2)}</strong> in cash or via UPI/Mobile QR scan upon delivery at your shipping address. No advance payment required!
+                                        Pay <strong>{formatPrice(total)}</strong> in cash or via UPI/Mobile QR scan upon delivery at your shipping address. No advance payment required!
                                     </p>
                                     <div className="mt-2 flex items-center gap-2 text-[11px] font-semibold text-emerald-800 dark:text-emerald-300">
                                         <span className="material-symbols-outlined text-sm">local_shipping</span> Free COD Verification • Fast Courier Dispatch
@@ -331,7 +333,7 @@ export const CheckoutPage = () => {
                         ) : (
                             <span className="flex items-center gap-2">
                                 <span className="material-symbols-outlined">{paymentMethod === 'cod' ? 'handshake' : 'lock'}</span>
-                                {paymentMethod === 'cod' ? `Place Order with Cash on Delivery ($${total.toFixed(2)})` : `Pay $${total.toFixed(2)} Now`}
+                                {paymentMethod === 'cod' ? `Place Order with Cash on Delivery (${formatPrice(total)})` : `Pay ${formatPrice(total)} Now`}
                             </span>
                         )}
                     </button>
@@ -349,7 +351,7 @@ export const CheckoutPage = () => {
                                     <p className="font-bold text-primary line-clamp-1">{item.name}</p>
                                     <p className="text-on-surface-variant">Size {item.size} • Qty {item.quantity}</p>
                                 </div>
-                                <span className="font-bold text-sm text-primary">${(item.price * item.quantity).toFixed(2)}</span>
+                                <span className="font-bold text-sm text-primary">{formatPrice(item.price * item.quantity)}</span>
                             </div>
                         ))}
                     </div>
@@ -357,25 +359,25 @@ export const CheckoutPage = () => {
                     <div className="space-y-2 text-xs text-on-surface-variant pt-4 border-t border-outline-variant/40">
                         <div className="flex justify-between">
                             <span>Subtotal</span>
-                            <span className="font-bold text-primary">${subtotal.toFixed(2)}</span>
+                            <span className="font-bold text-primary">{formatPrice(subtotal)}</span>
                         </div>
                         {discount > 0 && (
                             <div className="flex justify-between text-emerald-600 font-bold">
                                 <span>Discount</span>
-                                <span>-${discount.toFixed(2)}</span>
+                                <span>-{formatPrice(discount)}</span>
                             </div>
                         )}
                         <div className="flex justify-between">
                             <span>Shipping Fee</span>
-                            <span className="font-bold text-primary">{shippingFee === 0 ? <span className="text-emerald-600 font-bold">FREE</span> : `$${shippingFee.toFixed(2)}`}</span>
+                            <span className="font-bold text-primary">{shippingFee === 0 ? <span className="text-emerald-600 font-bold">FREE</span> : formatPrice(shippingFee)}</span>
                         </div>
                         <div className="flex justify-between">
                             <span>Estimated Tax</span>
-                            <span className="font-bold text-primary">${tax.toFixed(2)}</span>
+                            <span className="font-bold text-primary">{formatPrice(tax)}</span>
                         </div>
                         <div className="flex justify-between text-xl font-black text-primary pt-3 border-t border-outline-variant/40">
                             <span>Total</span>
-                            <span>${total.toFixed(2)}</span>
+                            <span>{formatPrice(total)}</span>
                         </div>
                     </div>
                 </div>

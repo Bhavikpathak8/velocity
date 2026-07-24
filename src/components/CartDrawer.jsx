@@ -1,8 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const CartDrawer = () => {
+    const { formatPrice } = useCurrency();
     const {
         cartItems,
         isCartOpen,
@@ -66,7 +68,7 @@ export const CartDrawer = () => {
                     <div className="bg-surface-container-low px-6 py-3 border-b border-outline-variant">
                         {remainingForFreeShipping > 0 ? (
                             <p className="text-xs text-on-surface-variant font-medium mb-1.5">
-                                Add <span className="font-bold text-primary dark:text-on-primary">${remainingForFreeShipping.toFixed(2)}</span> more for <span className="font-bold text-secondary">FREE Express Shipping</span>
+                                Add <span className="font-bold text-primary dark:text-on-primary">{formatPrice(remainingForFreeShipping)}</span> more for <span className="font-bold text-secondary">FREE Express Shipping</span>
                             </p>
                         ) : (
                             <p className="text-xs text-emerald-600 font-bold mb-1.5 flex items-center gap-1">
@@ -137,7 +139,7 @@ export const CartDrawer = () => {
                                                 </button>
                                             </div>
                                             <span className="font-bold text-sm text-primary dark:text-on-primary">
-                                                ${(item.price * item.quantity).toFixed(2)}
+                                                {formatPrice(item.price * item.quantity)}
                                             </span>
                                         </div>
                                     </div>
@@ -173,27 +175,27 @@ export const CartDrawer = () => {
                             <div className="space-y-1 text-xs text-on-surface-variant pt-2 border-t border-surface-container">
                                 <div className="flex justify-between">
                                     <span>Subtotal</span>
-                                    <span className="font-semibold text-primary dark:text-on-primary">${subtotal.toFixed(2)}</span>
+                                    <span className="font-semibold text-primary dark:text-on-primary">{formatPrice(subtotal)}</span>
                                 </div>
                                 {discount > 0 && (
                                     <div className="flex justify-between text-emerald-600 font-semibold">
                                         <span>Discount</span>
-                                        <span>-${discount.toFixed(2)}</span>
+                                        <span>-{formatPrice(discount)}</span>
                                     </div>
                                 )}
                                 <div className="flex justify-between">
                                     <span>Estimated Shipping</span>
                                     <span className="font-semibold text-primary dark:text-on-primary">
-                                        {shippingFee === 0 ? <span className="text-emerald-600 uppercase font-bold">FREE</span> : `$${shippingFee.toFixed(2)}`}
+                                        {shippingFee === 0 ? <span className="text-emerald-600 uppercase font-bold">FREE</span> : formatPrice(shippingFee)}
                                     </span>
                                 </div>
                                 <div className="flex justify-between">
                                     <span>Estimated Tax (8%)</span>
-                                    <span className="font-semibold text-primary dark:text-on-primary">${tax.toFixed(2)}</span>
+                                    <span className="font-semibold text-primary dark:text-on-primary">{formatPrice(tax)}</span>
                                 </div>
                                 <div className="flex justify-between text-base font-extrabold text-primary dark:text-on-primary pt-2 border-t border-outline-variant/30">
                                     <span>Total</span>
-                                    <span>${total.toFixed(2)}</span>
+                                    <span>{formatPrice(total)}</span>
                                 </div>
                             </div>
 

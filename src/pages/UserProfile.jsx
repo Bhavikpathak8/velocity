@@ -3,9 +3,11 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../context/ProductsContext';
 import { useToast } from '../context/ToastContext';
+import { useCurrency } from '../context/CurrencyContext';
 import { ProductCard } from '../components/ProductCard';
 
 export const UserProfile = () => {
+    const { formatPrice } = useCurrency();
     const { user, token, logout } = useAuth();
     const { products, wishlist } = useProducts();
     const { addToast } = useToast();
@@ -274,14 +276,14 @@ export const UserProfile = () => {
                                                     <p className="text-xs text-on-surface-variant">Size: {item.size || 'Standard'} • Color: {item.color || 'Default'}</p>
                                                 </div>
                                             </div>
-                                            <span className="font-extrabold text-primary text-xs">Qty {item.quantity} • ${(item.price || 0).toFixed(2)}</span>
+                                            <span className="font-extrabold text-primary text-xs">Qty {item.quantity} • {formatPrice(item.price || 0)}</span>
                                         </div>
                                     ))}
                                 </div>
 
                                 <div className="flex justify-between items-center pt-3 border-t border-outline-variant/30">
                                     <span className="text-xs font-bold uppercase text-on-surface-variant">Total Amount Paid</span>
-                                    <span className="text-lg font-black text-primary">${(ord.total_amount || 0).toFixed(2)}</span>
+                                    <span className="text-lg font-black text-primary">{formatPrice(ord.total_amount || 0)}</span>
                                 </div>
                             </div>
                         );
