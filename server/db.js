@@ -7,8 +7,9 @@ const connectionString = process.env.DATABASE_URL || 'postgresql://velocity_user
 
 export const pool = new Pool({
     connectionString,
-    // Fallback connection settings for local PostgreSQL 18 on Windows
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+    ssl: (process.env.NODE_ENV === 'production' || connectionString.includes('render.com') || connectionString.includes('neon.tech') || connectionString.includes('sslmode=require'))
+        ? { rejectUnauthorized: false }
+        : false
 });
 
 // Auto-initialize PostgreSQL tables if they don't exist
