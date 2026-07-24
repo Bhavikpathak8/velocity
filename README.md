@@ -89,59 +89,6 @@ CREATE DATABASE velocity_db;
 
 Then open Query Tool in pgAdmin (`Alt + Shift + Q`) and run the schema setup:
 
-```sql
-CREATE TABLE IF NOT EXISTS users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-    role VARCHAR(50) DEFAULT 'customer',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS products (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(200) NOT NULL,
-    description TEXT,
-    price NUMERIC(10, 2) NOT NULL,
-    category VARCHAR(100),
-    stock_quantity INT DEFAULT 50,
-    sku VARCHAR(100) UNIQUE,
-    image_url TEXT
-);
-
-CREATE TABLE IF NOT EXISTS orders (
-    id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES users(id),
-    customer_name VARCHAR(100),
-    customer_email VARCHAR(150),
-    total_amount NUMERIC(10, 2) NOT NULL,
-    payment_method VARCHAR(50) DEFAULT 'Credit Card',
-    status VARCHAR(50) DEFAULT 'Processing',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS order_items (
-    id SERIAL PRIMARY KEY,
-    order_id INT REFERENCES orders(id) ON DELETE CASCADE,
-    product_id INT REFERENCES products(id),
-    quantity INT NOT NULL,
-    unit_price NUMERIC(10, 2) NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS coupons (
-    id SERIAL PRIMARY KEY,
-    code VARCHAR(50) UNIQUE NOT NULL,
-    discount_percentage INT NOT NULL,
-    status VARCHAR(20) DEFAULT 'Active'
-);
-
-INSERT INTO coupons (code, discount_percentage) VALUES 
-('WELCOME20', 20),
-('VELOCITY10', 10)
-ON CONFLICT (code) DO NOTHING;
-```
-
----
 
 ### 3. Setup & Run Project
 
@@ -256,7 +203,6 @@ Built as a **3rd Year University Project** demonstrating:
 ## 👨‍💻 Developer
 
 **Bhavik Pathak**  
-*3rd Year BScIT Student*  
 📧 Email: bhavikpathak08@gmail.com  
 🔗 GitHub: [Bhavikpathak8](https://github.com/Bhavikpathak8)
 
