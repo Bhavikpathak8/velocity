@@ -3,9 +3,11 @@ import { useNavigate, Link } from 'react-router-dom';
 import { ThreeCanvas } from '../components/ThreeCanvas';
 import { ProductCard } from '../components/ProductCard';
 import { useProducts } from '../context/ProductsContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const Home = () => {
     const { products } = useProducts();
+    const { formatPrice } = useCurrency();
     const navigate = useNavigate();
 
     const newArrivals = products.slice(0, 3);
@@ -69,7 +71,7 @@ export const Home = () => {
                 <div className="max-w-container-max mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs font-bold uppercase tracking-wider">
                     <div className="flex items-center justify-center gap-2">
                         <span className="material-symbols-outlined text-secondary">local_shipping</span>
-                        <span>Free Express Shipping &gt; $150</span>
+                        <span>Free Express Shipping &gt; {formatPrice(150)}</span>
                     </div>
                     <div className="flex items-center justify-center gap-2">
                         <span className="material-symbols-outlined text-secondary">eco</span>

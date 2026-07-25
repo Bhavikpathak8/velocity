@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useProducts } from '../context/ProductsContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const SearchModal = ({ onClose }) => {
     const { products } = useProducts();
+    const { formatPrice } = useCurrency();
     const [query, setQuery] = useState('');
     const inputRef = useRef(null);
     const navigate = useNavigate();
@@ -81,7 +83,7 @@ export const SearchModal = ({ onClose }) => {
                                         <p className="text-xs text-on-surface-variant">{prod.category} • SKU: {prod.sku}</p>
                                     </div>
                                     <div className="text-right">
-                                        <span className="font-bold text-primary dark:text-on-primary">${prod.price.toFixed(2)}</span>
+                                        <span className="font-bold text-primary dark:text-on-primary">{formatPrice(prod.price)}</span>
                                     </div>
                                 </div>
                             ))}

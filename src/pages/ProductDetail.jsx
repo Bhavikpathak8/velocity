@@ -151,7 +151,9 @@ export const ProductDetail = () => {
                             </div>
                             <h1 className="text-3xl md:text-5xl font-black text-primary tracking-tight mb-2">{product.name}</h1>
                             <div className="flex items-center gap-3">
-                                <span className="text-2xl font-extrabold text-primary">{formatPrice(product.price)}</span>
+                                <span className="text-2xl font-extrabold text-primary">
+                                    {formatPrice(product.sale_price || product.price)}
+                                </span>
                                 {product.sale_price && (
                                     <span className="text-lg text-on-surface-variant line-through">{formatPrice(product.price)}</span>
                                 )}
@@ -297,7 +299,7 @@ export const ProductDetail = () => {
                         <div className="mt-6 p-4 bg-surface-container-low rounded-xl flex items-center gap-3 text-xs text-on-surface-variant">
                             <span className="material-symbols-outlined text-xl text-secondary">local_shipping</span>
                             <div>
-                                <p className="font-bold text-primary">Free Express Delivery over $150</p>
+                                <p className="font-bold text-primary">Free Express Delivery over {formatPrice(150)}</p>
                                 <p>Ships within 24 hours with 30-day performance guarantee returns.</p>
                             </div>
                         </div>
