@@ -8,7 +8,7 @@ export const ProductsProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [wishlist, setWishlist] = useState(() => {
         const saved = localStorage.getItem('velocity_wishlist');
-        return saved ? JSON.parse(saved) : ['p1'];
+        return saved ? JSON.parse(saved) : [];
     });
 
     const [selectedCategory, setSelectedCategory] = useState('All');

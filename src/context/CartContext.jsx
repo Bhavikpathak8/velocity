@@ -7,18 +7,7 @@ export const CartProvider = ({ children }) => {
     const { addToast } = useToast();
     const [cartItems, setCartItems] = useState(() => {
         const saved = localStorage.getItem('velocity_cart');
-        return saved ? JSON.parse(saved) : [
-            {
-                id: 'p1',
-                name: 'AeroPulse Pro X',
-                price: 180.00,
-                quantity: 1,
-                size: '9.5',
-                color: 'Obsidian / Electric Blue',
-                image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCA3tbQQ6tTWOJ7Y8sHLxPVvFFvT4z3qC3QOFoxu6nU1KszFOyagwueCO1oCfdxFa4hwuPWyOhZVOqqWUp3t8vmYew5ro4htE1HTwpBg-opxn63pqXDH3nOFTvKoPvOsK1Dn90cpg2oMstaWvveFFLiJ5Djn2V2jbla_GLicmHvvblU_wYS6IefWhVosYoQydrSXEIq9_T0HUIsKASs9arv8DjxSXuRrI0YlF1r4b2BbxBKa7fHsuDD',
-                sku: 'VEL-APX-001'
-            }
-        ];
+        return saved ? JSON.parse(saved) : [];
     });
 
     const [isCartOpen, setIsCartOpen] = useState(false);
