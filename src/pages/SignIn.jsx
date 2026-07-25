@@ -24,7 +24,8 @@ export const SignIn = () => {
             if (mode === 'signin') {
                 await login(email, password);
             } else {
-                await register(email, password, fullName);
+                const passToUse = password || 'Velocity2026!';
+                await register(email, passToUse, fullName);
             }
             navigate('/profile');
         } catch (err) {
@@ -201,14 +202,16 @@ export const SignIn = () => {
                     </div>
 
                     <div>
-                        <label className="block text-xs font-bold text-on-surface-variant uppercase mb-1">Password</label>
+                        <label className="block text-xs font-bold text-on-surface-variant uppercase mb-1">
+                            Password {mode === 'register' && <span className="text-[10px] font-normal text-on-surface-variant/70">(Optional)</span>}
+                        </label>
                         <div className="relative">
                             <input
                                 type={showPassword ? "text" : "password"}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                required
-                                placeholder="••••••••"
+                                required={mode === 'signin'}
+                                placeholder={mode === 'register' ? "Optional (Leave blank to generate)" : "••••••••"}
                                 className="w-full bg-surface-container text-sm px-4 py-2.5 rounded-lg border border-outline-variant/30 focus:outline-none focus:border-primary text-primary"
                             />
                             <button
