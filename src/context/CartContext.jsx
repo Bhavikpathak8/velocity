@@ -7,7 +7,17 @@ export const CartProvider = ({ children }) => {
     const { addToast } = useToast();
     const [cartItems, setCartItems] = useState(() => {
         const saved = localStorage.getItem('velocity_cart');
-        return saved ? JSON.parse(saved) : [];
+        if (!saved) return [];
+        try {
+            const parsed = JSON.parse(saved);
+            if (Array.isArray(parsed) && parsed.length === 1 && parsed[0]?.id === 'p1') {
+                localStorage.removeItem('velocity_cart');
+                return [];
+            }
+            return parsed;
+        } catch {
+            return [];
+        }
     });
 
     const [isCartOpen, setIsCartOpen] = useState(false);

@@ -8,7 +8,17 @@ export const ProductsProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [wishlist, setWishlist] = useState(() => {
         const saved = localStorage.getItem('velocity_wishlist');
-        return saved ? JSON.parse(saved) : [];
+        if (!saved) return [];
+        try {
+            const parsed = JSON.parse(saved);
+            if (Array.isArray(parsed) && parsed.length === 1 && parsed[0] === 'p1') {
+                localStorage.removeItem('velocity_wishlist');
+                return [];
+            }
+            return parsed;
+        } catch {
+            return [];
+        }
     });
 
     const [selectedCategory, setSelectedCategory] = useState('All');
