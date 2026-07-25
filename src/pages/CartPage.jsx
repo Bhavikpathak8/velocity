@@ -2,9 +2,13 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 
 export const CartPage = () => {
     const { formatPrice } = useCurrency();
+    const { user } = useAuth();
+    const { addToast } = useToast();
     const {
         cartItems,
         updateQuantity,
@@ -27,6 +31,15 @@ export const CartPage = () => {
 
     const remainingForFreeShipping = freeShippingThreshold - subtotal;
     const progressPercent = Math.min(100, (subtotal / freeShippingThreshold) * 100);
+
+    const handleCheckout = () => {
+        if (!user) {
+            addToast('Please sign in to proceed to checkout.', 'info');
+            navigate('/signin');
+            return;
+        }
+        navigate('/checkout');
+    };
 
     if (cartItems.length === 0) {
         return (
@@ -148,7 +161,7 @@ export const CartPage = () => {
                     </div>
 
                     <button
-                        onClick={() => navigate('/checkout')}
+                        onClick={handleCheckout}
                         className="w-full bg-secondary text-on-primary font-bold py-4 rounded-xl hover:bg-secondary-container transition-colors shadow-lg flex items-center justify-center gap-2"
                     >
                         Proceed to Checkout

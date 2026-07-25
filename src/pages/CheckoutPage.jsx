@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useToast } from '../context/ToastContext';
 
 export const CheckoutPage = () => {
     const { formatPrice } = useCurrency();
     const { cartItems, subtotal, discount, shippingFee, tax, total, clearCart } = useCart();
     const { user } = useAuth();
+    const { addToast } = useToast();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (!user) {
+            addToast('Please sign in to proceed with your order checkout.', 'info');
+            navigate('/signin');
+        }
+    }, [user, navigate, addToast]);
+
     const [formData, setFormData] = useState({
-        email: user?.email || 'customer@velocity.com',
-        fullName: user?.full_name || 'Bhavik Pathak',
+        email: user?.email || '',
+        fullName: user?.full_name || '',
         address: '742 Evergreen Terrace',
         city: 'San Francisco',
         state: 'CA',

@@ -4,6 +4,8 @@ import { useProducts } from '../context/ProductsContext';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
 import { useCompare } from '../context/CompareContext';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import { QuickViewModal } from './QuickViewModal';
 
 export const ProductCard = ({ product }) => {
@@ -11,11 +13,23 @@ export const ProductCard = ({ product }) => {
     const { addToCart } = useCart();
     const { formatPrice } = useCurrency();
     const { addToCompare, compareList } = useCompare();
+    const { user } = useAuth();
+    const { addToast } = useToast();
     const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
     const navigate = useNavigate();
 
     const isFavorite = wishlist.includes(product.id);
     const isInCompare = compareList.some(p => p.id === product.id);
+
+    const handleFavoriteClick = (e) => {
+        e.stopPropagation();
+        if (!user) {
+            addToast('Please sign in to save items to your wishlist.', 'info');
+            navigate('/signin');
+            return;
+        }
+        toggleWishlist(product.id);
+    };
 
     const handleCardClick = (e) => {
         // If user didn't click favorite or quick action buttons
@@ -55,10 +69,7 @@ export const ProductCard = ({ product }) => {
                     {/* Top Action Buttons (Favorite + Compare) */}
                     <div className="absolute top-3 right-3 flex flex-col gap-1.5">
                         <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                toggleWishlist(product.id);
-                            }}
+                            onClick={handleFavoriteClick}
                             className={`card-action-btn p-2 rounded-full backdrop-blur-md transition-colors shadow ${isFavorite ? 'bg-error text-white' : 'bg-surface-container-lowest/80 text-primary hover:text-error'}`}
                             title={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
                         >

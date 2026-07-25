@@ -2,9 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 
 export const CartDrawer = () => {
     const { formatPrice } = useCurrency();
+    const { user } = useAuth();
+    const { addToast } = useToast();
     const {
         cartItems,
         isCartOpen,
@@ -34,6 +38,11 @@ export const CartDrawer = () => {
 
     const handleCheckout = () => {
         setIsCartOpen(false);
+        if (!user) {
+            addToast('Please sign in to proceed to checkout.', 'info');
+            navigate('/signin');
+            return;
+        }
         navigate('/checkout');
     };
 

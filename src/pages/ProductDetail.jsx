@@ -3,6 +3,8 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useProducts } from '../context/ProductsContext';
 import { useCart } from '../context/CartContext';
 import { useCurrency } from '../context/CurrencyContext';
+import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import { ReviewModal } from '../components/ReviewModal';
 import { ProductCard } from '../components/ProductCard';
 import { ShoeViewer3D } from '../components/ShoeViewer3D';
@@ -15,6 +17,8 @@ export const ProductDetail = () => {
     const { products, wishlist, toggleWishlist } = useProducts();
     const { addToCart } = useCart();
     const { formatPrice } = useCurrency();
+    const { user } = useAuth();
+    const { addToast } = useToast();
     const navigate = useNavigate();
 
     const product = products.find(p => p.slug === slug || p.id === slug) || products[0];
@@ -87,8 +91,31 @@ export const ProductDetail = () => {
     };
 
     const handleBuyNow = () => {
+        if (!user) {
+            addToast('Please sign in to proceed with Express Buy.', 'info');
+            navigate('/signin');
+            return;
+        }
         addToCart(product, selectedSize, selectedColor, quantity);
         navigate('/checkout');
+    };
+
+    const handleToggleWishlist = () => {
+        if (!user) {
+            addToast('Please sign in to save items to your wishlist.', 'info');
+            navigate('/signin');
+            return;
+        }
+        toggleWishlist(product.id);
+    };
+
+    const handleOpenReviewModal = () => {
+        if (!user) {
+            addToast('Please sign in to leave a verified review.', 'info');
+            navigate('/signin');
+            return;
+        }
+        setIsReviewModalOpen(true);
     };
 
     return (
@@ -268,7 +295,7 @@ export const ProductDetail = () => {
                                 </button>
 
                                 <button
-                                    onClick={() => toggleWishlist(product.id)}
+                                    onClick={handleToggleWishlist}
                                     className={`h-12 border font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2 ${isFavorite
                                         ? 'bg-error text-white border-error'
                                         : 'border-outline-variant text-primary hover:bg-surface-container'
@@ -358,7 +385,7 @@ export const ProductDetail = () => {
                         <h2 className="text-3xl font-extrabold text-primary">Verified Reviews ({reviewsList.length})</h2>
                     </div>
                     <button
-                        onClick={() => setIsReviewModalOpen(true)}
+                        onClick={handleOpenReviewModal}
                         className="bg-primary text-on-primary font-bold text-xs uppercase px-5 py-3 rounded-lg hover:bg-tertiary-container transition-colors shadow"
                     >
                         Write a Verified Review
