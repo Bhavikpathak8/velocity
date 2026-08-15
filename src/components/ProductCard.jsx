@@ -55,8 +55,8 @@ export const ProductCard = ({ product }) => {
                     {/* Badges */}
                     <div className="absolute top-3 left-3 flex flex-col gap-1">
                         {product.sale_price && (
-                            <span className="bg-error text-on-error px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider shadow">
-                                Sale
+                            <span className="bg-error text-on-error px-2 py-0.5 rounded text-[11px] font-extrabold uppercase tracking-wider shadow">
+                                SAVE {Math.round(((product.price - product.sale_price) / product.price) * 100)}%
                             </span>
                         )}
                         {product.metadata?.zero_waste && (
