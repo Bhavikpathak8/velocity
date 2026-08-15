@@ -22,6 +22,7 @@ import { Sustainability } from './pages/Sustainability';
 import { HelpCenter } from './pages/HelpCenter';
 import { StoreLocator } from './pages/StoreLocator';
 
+import { ScrollToTop } from './components/ScrollToTop';
 import { CompareProvider } from './context/CompareContext';
 import { CompareModal } from './components/CompareModal';
 import { CompareFloatingBar } from './components/CompareFloatingBar';
@@ -36,6 +37,7 @@ export function App() {
                         <CompareProvider>
                             <CartProvider>
                                 <Router>
+                                    <ScrollToTop />
                                     <div className="min-h-screen flex flex-col bg-surface text-on-surface antialiased font-sans transition-colors duration-200">
                                         <Navbar />
                                         <CartDrawer />
