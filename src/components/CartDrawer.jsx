@@ -177,6 +177,25 @@ export const CartDrawer = () => {
                                 </button>
                             </div>
 
+                            {/* Quick Promo Chips */}
+                            <div className="flex items-center gap-1.5 text-[10px]">
+                                <span className="text-on-surface-variant font-semibold">Try:</span>
+                                <button
+                                    type="button"
+                                    onClick={() => { setPromoCode('VELOCITY10'); applyPromoCode('VELOCITY10'); }}
+                                    className="bg-secondary/10 text-secondary border border-secondary/30 px-2 py-0.5 rounded font-bold hover:bg-secondary hover:text-on-secondary transition-colors"
+                                >
+                                    VELOCITY10 (10% OFF)
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => { setPromoCode('FREESHIP'); applyPromoCode('FREESHIP'); }}
+                                    className="bg-emerald-500/10 text-emerald-600 border border-emerald-500/30 px-2 py-0.5 rounded font-bold hover:bg-emerald-600 hover:text-white transition-colors"
+                                >
+                                    FREESHIP
+                                </button>
+                            </div>
+
                             {promoSuccess && <p className="text-xs text-emerald-600 font-bold">{promoSuccess}</p>}
                             {promoError && <p className="text-xs text-error font-bold">{promoError}</p>}
 
