@@ -81,6 +81,7 @@ export const Navbar = () => {
                         <select
                             value={currency}
                             onChange={(e) => setCurrency(e.target.value)}
+                            aria-label="Select Currency"
                             className="bg-surface-container text-xs font-bold px-2 py-1 rounded-md border border-outline-variant/40 text-primary cursor-pointer hover:border-primary transition-colors focus:outline-none hidden sm:block"
                         >
                             {Object.keys(currencies).map(code => (
@@ -93,7 +94,7 @@ export const Navbar = () => {
                         {/* Search Icon */}
                         <button
                             onClick={() => setIsSearchOpen(true)}
-                            aria-label="Search"
+                            aria-label="Open Search Dialog"
                             className="hover:opacity-70 p-2 transition-opacity"
                         >
                             <span className="material-symbols-outlined">search</span>
@@ -104,6 +105,7 @@ export const Navbar = () => {
                             to="/shop?wishlist=true"
                             className="hover:opacity-70 p-2 transition-opacity relative hidden sm:block"
                             title="Saved Wishlist"
+                            aria-label={`Saved Wishlist (${wishlist.length} items)`}
                         >
                             <span className="material-symbols-outlined">favorite</span>
                             {wishlist.length > 0 && (
@@ -118,7 +120,8 @@ export const Navbar = () => {
                             <button
                                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                                 className="hover:opacity-70 p-2 transition-opacity flex items-center gap-1"
-                                aria-label="User Menu"
+                                aria-label="User Account Menu"
+                                aria-expanded={isUserMenuOpen}
                             >
                                 <span className="material-symbols-outlined">person</span>
                                 {user && <span className="w-2 h-2 rounded-full bg-emerald-500"></span>}
