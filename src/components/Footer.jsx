@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useToast } from '../context/ToastContext';
 
 export const Footer = () => {
     const [email, setEmail] = useState('');
     const [subscribed, setSubscribed] = useState(false);
+    const { addToast } = useToast();
 
     const handleSubscribe = (e) => {
         e.preventDefault();
         if (email) {
             setSubscribed(true);
             setEmail('');
+            if (addToast) {
+                addToast('Welcome to VELOCITY VIP! Check your inbox for your 10% discount code.', 'success');
+            }
         }
     };
 
