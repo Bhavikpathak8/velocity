@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ProductCard } from '../components/ProductCard';
 import { useProducts } from '../context/ProductsContext';
+import { useCurrency } from '../context/CurrencyContext';
 
 export const Shop = () => {
+    const { formatPrice } = useCurrency();
     const {
         filteredProducts,
         selectedCategory,
@@ -141,7 +143,7 @@ export const Shop = () => {
                     <div className="border-b border-surface-container pb-6">
                         <div className="flex justify-between items-center mb-2">
                             <h4 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Max Price</h4>
-                            <span className="text-sm font-extrabold text-primary">${maxPrice}</span>
+                            <span className="text-sm font-extrabold text-primary">{formatPrice(maxPrice)}</span>
                         </div>
                         <input
                             type="range"
@@ -153,8 +155,8 @@ export const Shop = () => {
                             className="w-full accent-primary cursor-pointer"
                         />
                         <div className="flex justify-between text-[10px] text-on-surface-variant font-bold mt-1">
-                            <span>$30</span>
-                            <span>$500</span>
+                            <span>{formatPrice(30)}</span>
+                            <span>{formatPrice(500)}</span>
                         </div>
                     </div>
 
