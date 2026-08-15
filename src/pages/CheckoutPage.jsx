@@ -33,6 +33,16 @@ export const CheckoutPage = () => {
         shippingSpeed: 'express'
     });
 
+    const getDeliveryEstimate = () => {
+        const today = new Date();
+        const start = new Date(today);
+        start.setDate(today.getDate() + 2);
+        const end = new Date(today);
+        end.setDate(today.getDate() + 4);
+        const options = { month: 'short', day: 'numeric' };
+        return `${start.toLocaleDateString('en-US', options)} - ${end.toLocaleDateString('en-US', options)}`;
+    };
+
     const [paymentMethod, setPaymentMethod] = useState('card'); // 'card' | 'cod'
     const [isProcessing, setIsProcessing] = useState(false);
 
@@ -111,9 +121,15 @@ export const CheckoutPage = () => {
 
     return (
         <div className="max-w-container-max mx-auto px-6 md:px-8 py-10 min-h-screen">
-            <div className="mb-8 border-b border-surface-container-high pb-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-1 block">Checkout</span>
-                <h1 className="text-3xl md:text-4xl font-black text-primary">Secure Payment & Shipping</h1>
+            <div className="mb-8 border-b border-surface-container-high pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-secondary mb-1 block">Checkout</span>
+                    <h1 className="text-3xl md:text-4xl font-black text-primary">Secure Payment & Shipping</h1>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 shrink-0">
+                    <span className="material-symbols-outlined text-base">local_shipping</span>
+                    <span>Estimated Delivery: <strong className="text-emerald-700 dark:text-emerald-300">{getDeliveryEstimate()}</strong></span>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
