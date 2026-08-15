@@ -12,7 +12,14 @@ export const SearchModal = ({ onClose }) => {
 
     useEffect(() => {
         inputRef.current?.focus();
-    }, []);
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                onClose();
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onClose]);
 
     const results = query.trim() === '' ? [] : products.filter(p =>
         p.name.toLowerCase().includes(query.toLowerCase()) ||
