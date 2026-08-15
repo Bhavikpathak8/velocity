@@ -301,10 +301,16 @@ export const UserProfile = () => {
                             ))}
                         </div>
                     ) : (
-                        <div className="py-16 text-center text-on-surface-variant">
-                            <span className="material-symbols-outlined text-5xl mb-2">favorite</span>
-                            <p className="font-bold text-lg">Your Wishlist is Empty</p>
-                            <p className="text-xs mt-1">Tap the heart icon on any product to save items here.</p>
+                        <div className="py-16 text-center text-on-surface-variant bg-surface-container-low rounded-2xl border border-outline-variant/30">
+                            <span className="material-symbols-outlined text-5xl mb-2 text-primary/40">favorite</span>
+                            <p className="font-bold text-lg text-primary">Your Wishlist is Empty</p>
+                            <p className="text-xs mt-1 mb-6 text-on-surface-variant">Tap the heart icon on any product to save items here for later.</p>
+                            <button
+                                onClick={() => navigate('/shop')}
+                                className="bg-primary text-on-primary font-bold px-6 py-2.5 rounded-xl text-xs uppercase tracking-wider hover:bg-tertiary-container transition-colors shadow-sm"
+                            >
+                                Explore Catalog
+                            </button>
                         </div>
                     )}
                 </div>
