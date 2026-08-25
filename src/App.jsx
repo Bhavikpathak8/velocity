@@ -23,6 +23,7 @@ import { HelpCenter } from './pages/HelpCenter';
 import { StoreLocator } from './pages/StoreLocator';
 
 import { ScrollToTop } from './components/ScrollToTop';
+import { BackToTop } from './components/BackToTop';
 import { CompareProvider } from './context/CompareContext';
 import { CompareModal } from './components/CompareModal';
 import { CompareFloatingBar } from './components/CompareFloatingBar';
@@ -38,6 +39,7 @@ export function App() {
                             <CartProvider>
                                 <Router>
                                     <ScrollToTop />
+                                    <BackToTop />
                                     <div className="min-h-screen flex flex-col bg-surface text-on-surface antialiased font-sans transition-colors duration-200">
                                         <Navbar />
                                         <CartDrawer />
