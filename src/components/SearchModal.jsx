@@ -46,9 +46,19 @@ export const SearchModal = ({ onClose }) => {
                         placeholder="Search AeroPulse, Strata, Hoodies, Duffels..."
                         className="w-full bg-transparent text-lg text-primary dark:text-on-primary focus:outline-none placeholder:text-on-surface-variant/60"
                     />
+                    {query && (
+                        <button
+                            onClick={() => setQuery('')}
+                            aria-label="Clear Search Input"
+                            className="mr-2 text-xs font-bold text-on-surface-variant/70 hover:text-primary transition-colors bg-surface-container px-2 py-0.5 rounded-md"
+                        >
+                            Clear
+                        </button>
+                    )}
                     <button
                         onClick={onClose}
                         className="p-1 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors"
+                        aria-label="Close Search Modal"
                     >
                         <span className="material-symbols-outlined">close</span>
                     </button>
