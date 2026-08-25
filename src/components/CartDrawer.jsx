@@ -15,6 +15,7 @@ export const CartDrawer = () => {
         setIsCartOpen,
         updateQuantity,
         removeFromCart,
+        clearCart,
         subtotal,
         discount,
         shippingFee,
@@ -65,12 +66,27 @@ export const CartDrawer = () => {
                                 {totalCount} {totalCount === 1 ? 'item' : 'items'}
                             </span>
                         </div>
-                        <button
-                            onClick={() => setIsCartOpen(false)}
-                            className="p-2 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors"
-                        >
-                            <span className="material-symbols-outlined">close</span>
-                        </button>
+                        <div className="flex items-center gap-1">
+                            {cartItems.length > 0 && (
+                                <button
+                                    onClick={() => {
+                                        if (window.confirm('Are you sure you want to clear all items from your cart?')) {
+                                            clearCart();
+                                        }
+                                    }}
+                                    className="text-xs text-error font-bold hover:underline px-2 py-1"
+                                >
+                                    Clear All
+                                </button>
+                            )}
+                            <button
+                                onClick={() => setIsCartOpen(false)}
+                                className="p-2 hover:bg-surface-container rounded-full text-on-surface-variant transition-colors"
+                                aria-label="Close Cart Drawer"
+                            >
+                                <span className="material-symbols-outlined">close</span>
+                            </button>
+                        </div>
                     </div>
 
                     {/* Shipping Threshold Progress Bar */}
