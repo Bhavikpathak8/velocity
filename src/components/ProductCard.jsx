@@ -120,8 +120,13 @@ export const ProductCard = ({ product }) => {
                 {/* Product Details */}
                 <div className="flex justify-between items-start px-1">
                     <div>
-                        <div className="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-0.5">
-                            {product.category}
+                        <div className="flex items-center gap-2 mb-0.5">
+                            <span className="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
+                                {product.category}
+                            </span>
+                            <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> In Stock
+                            </span>
                         </div>
                         <h3 className="font-semibold text-base text-primary dark:text-on-primary group-hover:text-secondary transition-colors line-clamp-1">
                             {product.name}
