@@ -18,6 +18,17 @@ export const Navbar = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+    React.useEffect(() => {
+        const handleKeyDown = (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                setIsSearchOpen(prev => !prev);
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
+
     const isActive = (path) => location.pathname === path;
 
     return (
@@ -95,9 +106,13 @@ export const Navbar = () => {
                         <button
                             onClick={() => setIsSearchOpen(true)}
                             aria-label="Open Search Dialog"
-                            className="hover:opacity-70 p-2 transition-opacity"
+                            className="hover:opacity-70 p-2 transition-opacity flex items-center gap-1 group"
+                            title="Search (Ctrl + K)"
                         >
                             <span className="material-symbols-outlined">search</span>
+                            <kbd className="hidden lg:inline-block bg-surface-container text-[10px] font-mono px-1.5 py-0.5 rounded border border-outline-variant/40 text-on-surface-variant group-hover:border-primary">
+                                ⌘K
+                            </kbd>
                         </button>
 
                         {/* Wishlist Icon */}
