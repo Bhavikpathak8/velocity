@@ -56,6 +56,8 @@ export const Shop = () => {
         ? filteredProducts.filter(p => wishlist.includes(p.id))
         : filteredProducts;
 
+    const activeFilterCount = selectedSizes.length + (selectedCategory !== 'All' ? 1 : 0) + (minRating > 0 ? 1 : 0) + (maxPrice < 500 ? 1 : 0);
+
     return (
         <div className="w-full max-w-container-max mx-auto px-6 md:px-8 py-10 min-h-screen flex flex-col">
             {/* Header Banner */}
@@ -103,13 +105,20 @@ export const Shop = () => {
                     className="md:hidden w-full bg-surface-container py-3 rounded-lg text-sm font-bold text-primary flex items-center justify-center gap-2 border border-outline-variant"
                 >
                     <span className="material-symbols-outlined">tune</span>
-                    Filter Products ({selectedSizes.length + (selectedCategory !== 'All' ? 1 : 0)})
+                    Filter Products {activeFilterCount > 0 && `(${activeFilterCount})`}
                 </button>
 
                 {/* Sidebar Filters (Desktop) */}
                 <aside className="w-full md:w-64 shrink-0 self-start hidden md:block border-r border-outline-variant/40 pr-8 space-y-8">
                     <div className="flex items-center justify-between">
-                        <h3 className="font-extrabold text-lg text-primary">Filters</h3>
+                        <div className="flex items-center gap-2">
+                            <h3 className="font-extrabold text-lg text-primary">Filters</h3>
+                            {activeFilterCount > 0 && (
+                                <span className="bg-primary text-on-primary text-xs font-bold h-5 w-5 rounded-full flex items-center justify-center">
+                                    {activeFilterCount}
+                                </span>
+                            )}
+                        </div>
                         <button
                             onClick={handleClearFilters}
                             className="text-xs font-bold text-on-surface-variant hover:text-error transition-colors underline"
