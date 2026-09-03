@@ -20,6 +20,15 @@ export const OrderConfirmed = () => {
         });
     }, []);
 
+    const [copied, setCopied] = React.useState(false);
+    const activeOrderId = currentOrder?.id || orderId || 'VEL-98421';
+
+    const handleCopyOrderId = () => {
+        navigator.clipboard.writeText(activeOrderId);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
     return (
         <div className="max-w-container-max mx-auto px-6 md:px-8 py-16 min-h-screen">
             <div className="max-w-3xl mx-auto text-center space-y-6">
@@ -36,8 +45,19 @@ export const OrderConfirmed = () => {
                         {isCOD ? 'Order Placed with Cash on Delivery' : 'Payment Confirmed'}
                     </span>
                     <h1 className="text-4xl md:text-5xl font-black text-primary tracking-tight">Order Confirmed!</h1>
-                    <p className="text-sm text-on-surface-variant mt-2">
-                        Thank you for your purchase. Your order number is <span className="font-extrabold text-primary font-mono bg-surface-container px-2 py-0.5 rounded">#{currentOrder?.id || orderId || 'VEL-98421'}</span>
+                    <p className="text-sm text-on-surface-variant mt-2 flex items-center justify-center gap-2 flex-wrap">
+                        <span>Thank you for your purchase. Your order number is</span>
+                        <span className="inline-flex items-center gap-1.5 font-extrabold text-primary font-mono bg-surface-container px-2.5 py-1 rounded-lg border border-outline-variant/40">
+                            #{activeOrderId}
+                            <button
+                                onClick={handleCopyOrderId}
+                                title="Copy Order ID"
+                                className="text-xs text-on-surface-variant hover:text-primary transition-colors p-0.5"
+                            >
+                                <span className="material-symbols-outlined text-sm">{copied ? 'check' : 'content_copy'}</span>
+                            </button>
+                        </span>
+                        {copied && <span className="text-xs font-bold text-emerald-600 animate-fade-in">Copied!</span>}
                     </p>
                 </div>
 
