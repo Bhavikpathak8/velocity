@@ -173,17 +173,22 @@ export const Shop = () => {
                     <div className="border-b border-surface-container pb-6">
                         <h4 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-3">Minimum Rating</h4>
                         <div className="space-y-1.5">
-                            {[0, 4.5, 4.8].map(rt => (
-                                <button
-                                    key={rt}
-                                    onClick={() => setMinRating(rt)}
-                                    className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold flex items-center justify-between border transition-all ${minRating === rt ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container text-primary border-outline-variant/30 hover:border-primary'
-                                        }`}
-                                >
-                                    <span>{rt === 0 ? 'All Ratings' : `${rt}★ & Above`}</span>
-                                    {minRating === rt && <span className="material-symbols-outlined text-sm">check</span>}
-                                </button>
-                            ))}
+                            {[0, 4.5, 4.8].map(rt => {
+                                const countForRating = products.filter(p => (p.rating || 4.9) >= rt).length;
+                                return (
+                                    <button
+                                        key={rt}
+                                        onClick={() => setMinRating(rt)}
+                                        className={`w-full text-left px-3 py-1.5 rounded-lg text-xs font-bold flex items-center justify-between border transition-all ${minRating === rt ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container text-primary border-outline-variant/30 hover:border-primary'
+                                            }`}
+                                    >
+                                        <span>{rt === 0 ? 'All Ratings' : `${rt}★ & Above`}</span>
+                                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${minRating === rt ? 'bg-on-primary/20 text-on-primary' : 'bg-surface-container-high text-on-surface-variant'}`}>
+                                            {countForRating}
+                                        </span>
+                                    </button>
+                                );
+                            })}
                         </div>
                     </div>
 
