@@ -412,6 +412,19 @@ export const ProductDetail = () => {
                                 ))}
                             </div>
                             <p className="text-sm text-on-surface-variant leading-relaxed">"{rev.comment}"</p>
+                            <div className="mt-4 pt-3 border-t border-outline-variant/30 flex items-center justify-between text-xs text-on-surface-variant">
+                                <span>Was this review helpful?</span>
+                                <button
+                                    onClick={(e) => {
+                                        const btn = e.currentTarget;
+                                        btn.classList.add('text-secondary', 'font-bold');
+                                        btn.innerText = '👍 Helpful (15)';
+                                    }}
+                                    className="hover:text-primary transition-colors flex items-center gap-1 bg-surface-container px-2.5 py-1 rounded-md"
+                                >
+                                    👍 Helpful ({rev.helpful_count || 14})
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>
