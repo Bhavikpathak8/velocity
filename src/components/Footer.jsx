@@ -97,6 +97,15 @@ export const Footer = () => {
                         </div>
                     </div>
                 </div>
+
+                {/* Footer Copyright & Status Bar */}
+                <div className="mt-12 pt-6 border-t border-on-primary/10 flex flex-col sm:flex-row items-center justify-between text-xs text-on-primary/60 dark:text-primary/60 gap-4">
+                    <p>© {new Date().getFullYear()} VELOCITY Athletics Inc. All rights reserved.</p>
+                    <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="font-semibold text-emerald-400">All Systems Operational</span>
+                    </div>
+                </div>
             </div>
         </footer>
     );
