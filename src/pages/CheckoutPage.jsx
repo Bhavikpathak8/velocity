@@ -138,7 +138,12 @@ export const CheckoutPage = () => {
 
                     {/* Express Checkout */}
                     <div className="bg-surface-container-low p-6 rounded-2xl border border-outline-variant/40 space-y-3">
-                        <span className="text-xs font-bold uppercase tracking-wider text-on-surface-variant block">Express Checkout</span>
+                        <div className="flex justify-between items-center">
+                            <span className="text-xs font-bold uppercase tracking-wider text-on-surface-variant block">Express Checkout</span>
+                            <div className="flex items-center gap-1.5 text-[11px] text-emerald-600 dark:text-emerald-400 font-bold">
+                                <span className="material-symbols-outlined text-sm">lock</span> 256-Bit SSL Encrypted
+                            </div>
+                        </div>
                         <div className="grid grid-cols-2 gap-3">
                             <button
                                 type="button"
