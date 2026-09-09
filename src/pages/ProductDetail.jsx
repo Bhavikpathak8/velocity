@@ -251,6 +251,10 @@ export const ProductDetail = () => {
                                     </button>
                                 ))}
                             </div>
+                            <div className="mt-2.5 flex items-center gap-1.5 text-xs text-on-surface-variant/80 font-medium">
+                                <span className="material-symbols-outlined text-sm text-emerald-600">published_with_changes</span>
+                                <span>30-Day Hassle-Free Returns & Size Exchanges</span>
+                            </div>
                         </div>
 
                         {/* Quantity Selector */}
