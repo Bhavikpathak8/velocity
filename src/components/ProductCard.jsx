@@ -53,14 +53,19 @@ export const ProductCard = ({ product }) => {
                     />
 
                     {/* Badges */}
-                    <div className="absolute top-3 left-3 flex flex-col gap-1">
+                    <div className="absolute top-3 left-3 flex flex-col gap-1 z-10">
                         {product.sale_price && (
-                            <span className="bg-error text-on-error px-2 py-0.5 rounded text-[11px] font-extrabold uppercase tracking-wider shadow">
+                            <span className="bg-error text-on-error px-2 py-0.5 rounded-md text-[11px] font-black uppercase tracking-wider shadow-md">
                                 SAVE {Math.round(((product.price - product.sale_price) / product.price) * 100)}%
                             </span>
                         )}
+                        {(product.rating || 4.9) >= 4.8 && !product.sale_price && (
+                            <span className="bg-amber-500 text-black px-2 py-0.5 rounded-md text-[11px] font-black uppercase tracking-wider shadow-md flex items-center gap-0.5">
+                                ⚡ HOT DROP
+                            </span>
+                        )}
                         {product.metadata?.zero_waste && (
-                            <span className="bg-emerald-600 text-white px-2 py-0.5 rounded text-[11px] font-bold uppercase tracking-wider shadow flex items-center gap-1">
+                            <span className="bg-emerald-600 text-white px-2 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
                                 <span className="material-symbols-outlined text-xs">eco</span> Eco
                             </span>
                         )}
