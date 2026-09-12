@@ -212,12 +212,12 @@ export const Navbar = () => {
                         {/* Cart Drawer Trigger */}
                         <button
                             onClick={() => setIsCartOpen(true)}
-                            className="hover:opacity-70 p-2 transition-opacity relative flex items-center"
+                            className="hover:scale-105 active:scale-95 p-2 transition-all duration-200 relative flex items-center"
                             aria-label="Shopping Cart"
                         >
                             <span className="material-symbols-outlined">shopping_bag</span>
                             {totalCount > 0 && (
-                                <span className="absolute -top-1 -right-1 bg-secondary text-on-primary text-[11px] font-bold h-5 w-5 rounded-full flex items-center justify-center animate-pulse">
+                                <span className="absolute -top-1 -right-1 bg-secondary text-on-primary text-[11px] font-bold h-5 w-5 rounded-full flex items-center justify-center animate-pulse shadow">
                                     {totalCount}
                                 </span>
                             )}
