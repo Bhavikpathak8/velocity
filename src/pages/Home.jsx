@@ -33,8 +33,9 @@ export const Home = () => {
                 {/* Hero Content Overlay */}
                 <div className="relative z-10 max-w-container-max mx-auto px-6 md:px-8 w-full flex flex-col items-start justify-center py-20">
                     <div className="max-w-xl flex flex-col items-start gap-6">
-                        <span className="bg-primary text-on-primary font-bold text-xs px-3 py-1 uppercase tracking-widest rounded-full shadow">
-                            2026 Kinetic Drop
+                        <span className="bg-primary text-on-primary font-bold text-xs px-3.5 py-1.5 uppercase tracking-widest rounded-full shadow-lg flex items-center gap-2 border border-on-primary/20">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            2026 Kinetic Drop • Limited Release
                         </span>
 
                         <h1 className="font-extrabold text-5xl md:text-7xl tracking-tighter text-primary leading-none">
